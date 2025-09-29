@@ -3,53 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>湖边小筑 - 产品项目</title>
+	<!-- 网站标题 -->
+    <title>寒潇 - 近期作品</title>
     <!-- 网站描述 -->
-    <meta name="description" content="湖边小筑是专业的多领域接单平台，涵盖设计、开发、文案、营销等众多领域，为自由职业者和团队提供丰富的接单机会，为企业和需求方提供高效、优质的服务资源，轻松实现项目对接。">
+    <meta name="description" content="寒潇个人网站，涵盖文学创作、艺术欣赏、游戏攻略、娱乐分享以及各类项目推广。这里有丰富的内容等你探索，欢迎一同开启奇妙之旅。">
     <!-- 网站关键词 -->
-    <meta name="keywords" content="湖边小筑, 接单平台, 多领域接单, 个人接单, 团队接单, 自由职业者, 项目外包, 设计接单, 开发接单, 文案接单">
+    <meta name="keywords" content="寒潇, 寒潇勿语，文学创作, 艺术欣赏, 游戏攻略, 娱乐分享, 项目推广">
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* 全局样式 */
+        :root {
+            --primary-color: #8e2de2;
+            --secondary-color: #4a00e0;
+            --accent-color: #e94057;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --gradient-bg: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
         }
-
-        :root {
-            --primary-color: #8e2de2; /* 紫色 */
-            --secondary-color: #4a00e0; /* 深紫色 */
-            --accent-color: #e94057; /* 红色 */
-            --dark-color: #1a1a2e;
-            --light-color: #f8f9fa;
-            --gradient-bg: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-        }
-
         body {
             background-color: var(--light-color);
             color: var(--dark-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -59,43 +48,38 @@
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(142, 45, 226, 0.4);
+            transition: all .3s ease;
+            box-shadow: 0 4px 15px rgba(142, 45, 226, .4);
         }
-
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(142, 45, 226, 0.6);
+            box-shadow: 0 8px 20px rgba(142, 45, 226, .6);
         }
 
         /* 导航栏 */
         header {
-            background-color: rgba(26, 26, 46, 0.9);
+            background-color: rgba(26, 26, 46, .9);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .1);
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
         }
-
         .logo {
             display: flex;
             align-items: center;
         }
-
         .logo img {
             height: 40px;
             margin-right: 10px;
         }
-
         .logo h1 {
             color: white;
             font-size: 24px;
@@ -104,22 +88,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .nav-links {
             display: flex;
+            gap: 30px;
         }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
         .nav-links a {
             color: white;
             font-weight: 500;
             position: relative;
             padding: 5px 0;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -128,9 +106,8 @@
             width: 0;
             height: 2px;
             background: var(--gradient-bg);
-            transition: width 0.3s ease;
+            transition: width .3s ease;
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
@@ -143,8 +120,8 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            margin-top: 80px;
         }
-
         .header-banner::before {
             content: '';
             position: absolute;
@@ -153,39 +130,74 @@
             width: 100%;
             height: 100%;
             background: url('https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
-            opacity: 0.2;
+            opacity: .2;
             z-index: 0;
         }
-
         .header-content {
             position: relative;
             z-index: 1;
             color: white;
             max-width: 800px;
         }
-
         .header-content h2 {
             font-size: 42px;
             margin-bottom: 20px;
             font-weight: 800;
         }
-
         .header-content p {
             font-size: 18px;
             margin-bottom: 30px;
             max-width: 600px;
         }
 
-        /* 作品展示页面样式 */
-        .works-page {
-            padding: 120px 0 50px;
+        /* 搜索栏 */
+        .search-section {
+            padding: 40px 0 20px; /* 调整间距 */
+            text-align: center;
+        }
+        .search-box {
+            display: inline-flex;
+            align-items: center;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.1);
+            overflow: hidden;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+        }
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-box button {
+            background: var(--gradient-bg);
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all .3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .search-box button:hover {
+            background: var(--accent-color);
         }
 
+        /* 精彩瞬间视频 */
+        .video-section {
+            padding: 40px 0 80px; /* 调整顶部间距 */
+            background-color: white;
+        }
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px; /* 调整底部间距 */
         }
-
         .section-title h2 {
             font-size: 36px;
             color: var(--dark-color);
@@ -193,7 +205,6 @@
             display: inline-block;
             padding-bottom: 15px;
         }
-
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -204,246 +215,134 @@
             height: 3px;
             background: var(--gradient-bg);
         }
-
-        /* 搜索框功能 */
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto 20px;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 30px;
-            border: 2px solid #ddd;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            background-color: white;
+        .video-tags {
             display: flex;
-            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
         }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(142, 45, 226, 0.3);
+        .tag {
+            padding: 10px 20px;
+            background: rgba(142, 45, 226, .1);
+            border: 2px solid transparent;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all .3s ease;
+            font-weight: 500;
         }
-
-        .search-btn {
-            position: absolute;
-            right: 5px;
-            top: 50%;
-            transform: translateY(-50%);
+        .tag:hover,
+        .tag.active {
             background: var(--gradient-bg);
             color: white;
-            border: none;
-            border-radius: 30px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .search-btn:hover {
-            transform: translateY(-50%) translateY(-3px);
-            box-shadow: 0 5px 15px rgba(142, 45, 226, 0.4);
-        }
-
-        /* 快捷搜索标签 */
-        .quick-search-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .quick-tag {
-            padding: 6px 12px;
-            background: #f0f0f0;
-            border-radius: 20px;
-            font-size: 14px;
-            color: #666;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .quick-tag:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* 分类筛选 */
-        .filter-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            background: white;
-            border: 2px solid #ddd;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary-color);
-            color: white;
             border-color: var(--primary-color);
         }
-
-        /* 作品网格 */
-        .works-grid {
+        .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
         }
-
-        .work-card {
+        .video-item {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,.08);
+            transition: all .3s ease;
+            opacity: 1;
+            display: block;
+        }
+        .video-item.hidden {
+            display: none;
+        }
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(142,45,226,.15);
+        }
+        .video-wrapper {
             position: relative;
-        }
-
-        .work-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .work-image {
+            width: 100%;
             height: 200px;
-            overflow: hidden;
+            background: #000;
+            cursor: pointer;
         }
-
-        .work-image img {
+        .video-wrapper video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
-
-        .work-card:hover .work-image img {
-            transform: scale(1.1);
-        }
-
-        .work-info {
-            padding: 20px;
-            position: relative;
-        }
-
-        .work-info h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .work-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            color: #888;
-            font-size: 14px;
-        }
-
-        .work-category-container {
+        .video-play-icon {
+            position: absolute;
+            inset: 0;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+            background: rgba(0,0,0,.3);
+            transition: background .3s ease;
         }
-
-        .work-id {
-            background: rgba(142, 45, 226, 0.1);
-            color: var(--primary-color);
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 14px;
+        .video-wrapper:hover .video-play-icon {
+            background: rgba(0,0,0,.5);
+        }
+        .video-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .video-title {
+            font-size: 16px;
             font-weight: bold;
-            margin-right: 10px;
+            margin-bottom: 5px;
         }
-
-        .work-category {
-            background: #f0f0f0;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
+        .video-desc {
+            font-size: 13px;
             color: #666;
         }
 
-        .work-tags {
+        /* 分页控件样式 */
+        .pagination {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
         }
-
-        .tag {
-            background: #f0f0f0;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #666;
+        .pagination-btn {
+            padding: 8px 16px;
+            background: rgba(142, 45, 226, .1);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all .3s ease;
         }
-
-        .work-details {
-            margin: 15px 0;
-        }
-
-        .detail-tag {
-            display: inline-block;
-            background: #f0f0f0;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #666;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-
-        .work-description {
-            margin: 15px 0;
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .view-details {
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
+        .pagination-btn:hover:not(:disabled) {
             background: var(--gradient-bg);
             color: white;
+        }
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .pagination-pages {
+            display: flex;
+            gap: 5px;
+        }
+        .pagination-page {
+            padding: 8px 12px;
+            background: rgba(142, 45, 226, .1);
             border: none;
-            border-radius: 30px;
-            padding: 10px 20px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(142, 45, 226, 0.4);
+            transition: all .3s ease;
         }
-
-        .view-details:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(142, 45, 226, 0.6);
+        .pagination-page.active {
+            background: var(--gradient-bg);
+            color: white;
         }
-
-        /* 为按钮上方预留空间 */
-        .work-info::after {
-            content: '';
-            display: block;
-            clear: both;
-            height: 20px; /* 增加按钮上方的间距 */
+        .pagination-info {
+            margin-left: 15px;
+            font-size: 14px;
+            color: #666;
         }
 
         /* 页脚 */
@@ -451,23 +350,19 @@
             background-color: var(--dark-color);
             color: white;
             padding: 50px 0 20px;
-            margin-top: 50px;
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
-
         .footer-column h3 {
             font-size: 18px;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
-
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -477,88 +372,131 @@
             height: 2px;
             background: var(--gradient-bg);
         }
-
         .footer-column ul li {
             margin-bottom: 10px;
         }
-
         .footer-column ul li a {
             color: #aaa;
-            transition: color 0.3s ease;
+            transition: color .3s ease;
         }
-
         .footer-column ul li a:hover {
             color: var(--gradient-bg);
         }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            color: #aaa;
+            font-size: 14px;
+        }
 
+        /* 微信二维码容器 */
         .wechat-qrcode {
             display: flex;
             gap: 20px;
+            margin-top: 15px;
         }
-
         .wechat-qrcode-item {
             text-align: center;
+            width: 120px;
         }
-
         .wechat-qrcode-item img {
             width: 120px;
             height: 120px;
             background: white;
             padding: 5px;
             border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.1);
         }
-
         .wechat-qrcode-item p {
             margin-top: 10px;
-            font-size: 14px;
+            font-size: 12px;
+            color: #ccc;
         }
-
         .social-platforms {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-
         .social-platforms a {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,.1);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition: all .3s ease;
         }
-
         .social-platforms a:hover {
             background: var(--gradient-bg);
             transform: translateY(-3px);
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 14px;
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        .fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: .2s; }
+        .delay-2 { animation-delay: .4s; }
+        .delay-3 { animation-delay: .6s; }
 
-        /* 响应式设计 */
+        /* 响应 */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .nav-links { display: none; }
+            .video-grid { grid-template-columns: 1fr; }
+            .pagination {
+                flex-wrap: wrap;
+                gap: 5px;
             }
-            
-            .works-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .pagination-info {
+                width: 100%;
+                text-align: center;
+                margin-left: 0;
+                margin-top: 10px;
             }
-            
-            .view-details {
-                bottom: 10px;
-                right: 10px;
-                padding: 8px 16px;
+            .search-box {
+                width: 90%;
             }
         }
+        
+        /* 无结果提示 */
+        .no-results {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            display: none;
+            grid-column: 1 / -1;
+        }
+        .no-results i {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+.adaptive-iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* 保持16:9比例，根据实际需求调整 */
+}
+
+/* 移动端样式 */
+@media (max-width: 769px) {
+    .adaptive-iframe {
+        width: 100%;
+        height: auto;
+        min-height: 200px; /* 防止高度过小 */
+    }
+}
+
+/* 桌面端样式 */
+@media (min-width: 769px) {
+    .adaptive-iframe {
+        width: 1024px;
+        height: 576px;
+    }
+}
     </style>
 </head>
 <body>
@@ -567,15 +505,16 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHptMy41LTljLjgzIDAgMS41LS42NyAxLjUtMS41UzE2LjMzIDggMTUuNSA4IDE0IDguNjcgMTQgOC41IDE0LjUgOSAxNS41IDkgNVMyLjUgMTUgMi41IDE1cy42NyAxLjUgMS41IDEuNXoiLz48L3N2Zz4=" alt="Logo">
-                    <h1>湖边小筑</h1>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHptMy41LTljLjgzIDAgMS41LS42NyAxLjUtMS41UzE2LjMzIDggMTUuNSA4IDE0IDguNjcgMTQgOC41IDE0LjUgOSAxNS41IDkgMTVzLjY3IDEuNSAxLjUgMS41eiIvPjwvc3ZnPg==" alt="Logo">
+                    <h1>寒潇</h1>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="works.html">产品项目</a></li>
-                    <li><a href="news.html">往期案例</a></li>
-                    <li><a href="service.html">接单流程</a></li>
-                    <li><a href="recruitment.html">最新招募</a></li>
+                    <li><a href="notice.html">公告通知</a></li>
+                    <li><a href="news.html">最新动态</a></li>
+					<li><a href="project.html">最新推荐</a></li>
+                    <li><a href="style.html">近期作品</a></li>
+                    <li><a href="works.html">精彩瞬间</a></li>
                     <li><a href="about.html">关于我们</a></li>
 					<li><a href="navigation.html">更多</a></li>
                 </ul>
@@ -587,394 +526,496 @@
     <section class="header-banner">
         <div class="container">
             <div class="header-content">
-                <h2 class="fade-in">作品展示</h2>
-                <p class="fade-in delay-1">探索御音阁的优秀作品，感受声音艺术的魅力</p>
+                <h2 class="fade-in">攻略心得</h2>
+                <p class="fade-in delay-1">聆梦·兮禾 - 攻略心得</p>
             </div>
         </div>
     </section>
 
-    <!-- 作品展示页面 -->
-    <section class="works-page">
+    <!-- 精彩瞬间视频 -->
+    <section class="video-section">
         <div class="container">
             <div class="section-title">
-                <h2>作品展示</h2>
+                <h2>攻略心得</h2>
+            </div>
+				<center>
+<iframe class="adaptive-iframe" 
+        src="https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=30778828&quality=0" 
+        frameborder="no" 
+        framespacing="0" 
+        scrolling="no" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen="true">
+</iframe>
+				</center> 
+            <!-- 搜索栏 -->
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索视频标题或描述...">
+                    <button onclick="searchVideos()">
+                        <i class="fas fa-search"></i> 搜索
+                    </button>
+                </div>
+            </div>
+
+            <div class="video-tags" id="videoTags">
+                <div class="tag active" data-video="all">全部</div>
+                <div class="tag" data-video="sect">流派攻略</div>
+                <div class="tag" data-video="garrison">镇守攻略</div>
+                <div class="tag" data-video="dungeon">副本攻略</div>
+                <div class="tag" data-video="pvp">竞技攻略</div>
+                <div class="tag" data-video="casual">休闲攻略</div>
+                <div class="tag" data-video="official">经验心得</div>
             </div>
             
-            <!-- 搜索框功能 -->
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="搜索作品ID、名称、作者或标签...">
-                <button class="search-btn">
-                    <i>🔍</i> 搜索
-                </button>
+            <div class="video-grid" id="videoGrid">
+                <!-- 示例视频 -->
+                <div class="video-item" data-video="garrison">
+                    <div class="video-wrapper">
+                        <video src="https://vod.cc.163.com/file/68afb0126c6c9d7547a2aed5.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">千夜鬼神愁无伤通关攻略</div>
+                        <div class="video-desc">火焰侠客行</div>
+                    </div>
+                </div>
+                <div class="video-item" data-video="garrison">
+                    <div class="video-wrapper">
+                        <video src="https://vod.cc.163.com/file/68b41206eeb4f4bff168f703.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">听梅点雪鬼神愁无伤攻略（正常打／逃课打）</div>
+                        <div class="video-desc">可爱的塔塔</div>
+                    </div>
+                </div>
+                <div class="video-item" data-video="casual">
+                    <div class="video-wrapper">
+                        <video src=".././assets/videos/yysls/dc79f07ce43223bae164d64e781333aa.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">燕云日常一乐</div>
+                        <div class="video-desc">调戏九流门</div>
+                    </div>
+                </div>
+                <div class="video-item" data-video="official">
+                    <div class="video-wrapper">
+                        <video src="https://yysls.v.netease.com/pc/fab/20250721/intro.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">官方资料片CG</div>
+                        <div class="video-desc">全新门派登场</div>
+                    </div>
+                </div>
+                <!-- 更多示例视频 -->
+                <div class="video-item" data-video="dungeon">
+                    <div class="video-wrapper">
+                        <video src="https://yysls.v.netease.com/pc/fab/20250721/intro.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">副本攻略</div>
+                        <div class="video-desc">高效通关技巧</div>
+                    </div>
+                </div>
+                <div class="video-item" data-video="pvp">
+                    <div class="video-wrapper">
+                        <video src="https://yysls.v.netease.com/pc/fab/20250721/intro.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">PVP技巧</div>
+                        <div class="video-desc">高手对决解析</div>
+                    </div>
+                </div>
+                <div class="video-item" data-video="casual">
+                    <div class="video-wrapper">
+                        <video src="https://yysls.v.netease.com/pc/fab/20250721/intro.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">休闲玩法</div>
+                        <div class="video-desc">轻松游戏方式</div>
+                    </div>
+                </div>
+                <div class="video-item" data-video="official">
+                    <div class="video-wrapper">
+                        <video src="https://yysls.v.netease.com/pc/fab/20250721/intro.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">游戏更新</div>
+                        <div class="video-desc">最新版本内容</div>
+                    </div>
+                </div>
+                <div class="video-item" data-video="dungeon">
+                    <div class="video-wrapper">
+                        <video src="https://yysls.v.netease.com/pc/fab/20250721/intro.mp4" muted loop></video>
+                        <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">团队副本</div>
+                        <div class="video-desc">多人协作挑战</div>
+                    </div>
+                </div>
             </div>
             
-            <!-- 快捷搜索标签 -->
-            <div class="quick-search-tags">
-                <div class="quick-tag">新人引导本</div>
-                <div class="quick-tag">萌新Pia戏本</div>
-                <div class="quick-tag">黏人精的自我修养</div>
-                <div class="quick-tag">考核本</div>
-                <div class="quick-tag">古风读物</div>
-                <div class="quick-tag">戏曲合集</div>
+            <!-- 无结果提示 -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search"></i>
+                <h3>未找到相关视频</h3>
+                <p>请尝试其他关键词或分类</p>
             </div>
             
-            <!-- 分类筛选 -->
-            <div class="filter-container">
-                <button class="filter-btn active" data-category="all">全部作品</button>
-                <button class="filter-btn" data-category="pu">普本</button>
-                <button class="filter-btn" data-category="juqing">剧情歌</button>
-                <button class="filter-btn" data-category="kaohe">考核本</button>
-                <button class="filter-btn" data-category="dubu">读物本</button>
-                <button class="filter-btn" data-category="xiqu">戏曲本</button>
-            </div>
-            
-            <!-- 作品网格 -->
-            <div class="works-grid">
-                <!-- 作品1 -->
-                <div class="work-card" data-category="pu" data-id="001">
-                    <div class="work-image">
-                        <img src="./assets/img/御音阁招新.png" alt="作品1">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category-container">
-                            <div class="work-id">#001</div>
-                            <div class="work-category">普本</div>
-                        </div>
-                        <h3>【御音阁】新人引导本</h3>
-                        <div class="work-meta">
-                            <span>发布日期: 2023-06-15</span>
-                            <span>作者: 泠枫</span>
-                        </div>
-                        <div class="work-details">
-                            <span class="detail-tag"><strong>字数:</strong> 5000字</span>
-                            <span class="detail-tag"><strong>风格:</strong> 轻松</span>
-                            <span class="detail-tag"><strong>角色:</strong> 2男1女</span>
-                        </div>
-                        <p class="work-description">新人引导本，欢迎大家使用！</p>
-                        <div class="work-tags">
-                            <span class="tag">御音阁</span>
-                            <span class="tag">社团</span>
-                            <span class="tag">新人</span>
-                            <span class="tag">引导</span>
-                        </div>
-                        <button class="view-details">查看详情</button>
-                    </div>
-                </div>
-                
-                <!-- 作品2 -->
-                <div class="work-card" data-category="pu" data-id="002">
-                    <div class="work-image">
-                        <img src="./assets/img/gywm.png" alt="作品2">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category-container">
-                            <div class="work-id">#002</div>
-                            <div class="work-category">普本</div>
-                        </div>
-                        <h3>【御音阁】萌新Pia戏本</h3>
-                        <div class="work-meta">
-                            <span>发布日期: 2023-05-20</span>
-                            <span>作者: 苏瑶</span>
-                        </div>
-                        <div class="work-details">
-                            <span class="detail-tag"><strong>字数:</strong> 3000字</span>
-                            <span class="detail-tag"><strong>风格:</strong> 萌系</span>
-                            <span class="detail-tag"><strong>角色:</strong> 1男2女</span>
-                        </div>
-                        <p class="work-description">萌新Pia戏本，欢迎大家使用！</p>
-                        <div class="work-tags">
-                            <span class="tag">御音阁</span>
-                            <span class="tag">社团</span>
-                            <span class="tag">萌新</span>
-                            <span class="tag">Pia戏</span>
-                        </div>
-                        <button class="view-details">查看详情</button>
-                    </div>
-                </div>
-                
-                <!-- 作品3 -->
-                <div class="work-card" data-category="juqing" data-id="003">
-                    <div class="work-image">
-                        <img src="./assets/img\粘人精的自我修养.png" alt="作品3">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category-container">
-                            <div class="work-id">#003</div>
-                            <div class="work-category">剧情歌</div>
-                        </div>
-                        <h3>【甜蜜系】黏人精的自我修养</h3>
-                        <div class="work-meta">
-                            <span>发布日期: 2023-04-10</span>
-                            <span>作者: 白浅浅</span>
-                        </div>
-                        <div class="work-details">
-                            <span class="detail-tag"><strong>字数:</strong> 4000字</span>
-                            <span class="detail-tag"><strong>风格:</strong> 甜蜜</span>
-                            <span class="detail-tag"><strong>角色:</strong> 2男2女</span>
-                        </div>
-                        <p class="work-description">甜蜜系情感语录，欢迎大家使用！</p>
-                        <div class="work-tags">
-                            <span class="tag">语录</span>
-                            <span class="tag">情感</span>
-                            <span class="tag">电台稿</span>
-                            <span class="tag">甜蜜</span>
-                        </div>
-                        <button class="view-details">查看详情</button>
-                    </div>
-                </div>
-                
-                <!-- 作品4 -->
-                <div class="work-card" data-category="kaohe" data-id="004">
-                    <div class="work-image">
-                        <img src="./assets/img/gywm.png" alt="作品4">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category-container">
-                            <div class="work-id">#004</div>
-                            <div class="work-category">考核本</div>
-                        </div>
-                        <h3>【御音阁】2023年度考核本</h3>
-                        <div class="work-meta">
-                            <span>发布日期: 2023-03-05</span>
-                            <span>作者: 陈子墨</span>
-                        </div>
-                        <div class="work-details">
-                            <span class="detail-tag"><strong>字数:</strong> 6000字</span>
-                            <span class="detail-tag"><strong>风格:</strong> 严肃</span>
-                            <span class="detail-tag"><strong>角色:</strong> 3男3女</span>
-                        </div>
-                        <p class="work-description">2023年度考核专用本，用于成员考核。</p>
-                        <div class="work-tags">
-                            <span class="tag">考核</span>
-                            <span class="tag">年度</span>
-                            <span class="tag">专用</span>
-                        </div>
-                        <button class="view-details">查看详情</button>
-                    </div>
-                </div>
-                
-                <!-- 作品5 -->
-                <div class="work-card" data-category="dubu" data-id="005">
-                    <div class="work-image">
-                        <img src="./assets/img/gywm.png" alt="作品5">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category-container">
-                            <div class="work-id">#005</div>
-                            <div class="work-category">读物本</div>
-                        </div>
-                        <h3>【御音阁】古风读物精选</h3>
-                        <div class="work-meta">
-                            <span>发布日期: 2023-02-15</span>
-                            <span>作者: 泠枫</span>
-                        </div>
-                        <div class="work-details">
-                            <span class="detail-tag"><strong>字数:</strong> 8000字</span>
-                            <span class="detail-tag"><strong>风格:</strong> 古风</span>
-                            <span class="detail-tag"><strong>角色:</strong> 4男2女</span>
-                        </div>
-                        <p class="work-description">精选古风读物，感受传统文化的魅力。</p>
-                        <div class="work-tags">
-                            <span class="tag">古风</span>
-                            <span class="tag">读物</span>
-                            <span class="tag">精选</span>
-                            <span class="tag">文化</span>
-                        </div>
-                        <button class="view-details">查看详情</button>
-                    </div>
-                </div>
-                
-                <!-- 作品6 -->
-                <div class="work-card" data-category="xiqu" data-id="006">
-                    <div class="work-image">
-                        <img src="./assets/img/gywm.png" alt="作品6">
-                    </div>
-                    <div class="work-info">
-                        <div class="work-category-container">
-                            <div class="work-id">#006</div>
-                            <div class="work-category">戏曲本</div>
-                        </div>
-                        <h3>【御音阁】经典戏曲合集</h3>
-                        <div class="work-meta">
-                            <span>发布日期: 2023-01-20</span>
-                            <span>作者: 苏瑶</span>
-                        </div>
-                        <div class="work-details">
-                            <span class="detail-tag"><strong>字数:</strong> 10000字</span>
-                            <span class="detail-tag"><strong>风格:</strong> 戏曲</span>
-                            <span class="detail-tag"><strong>角色:</strong> 5男4女</span>
-                        </div>
-                        <p class="work-description">收录多部经典戏曲作品，感受传统艺术的魅力。</p>
-                        <div class="work-tags">
-                            <span class="tag">戏曲</span>
-                            <span class="tag">经典</span>
-                            <span class="tag">合集</span>
-                            <span class="tag">传统</span>
-                        </div>
-                        <button class="view-details">查看详情</button>
-                    </div>
-                </div>
+            <!-- 分页控件 -->
+            <div class="pagination" id="videoPagination">
+                <button class="pagination-btn" id="videoPrev">上一页</button>
+                <div class="pagination-pages" id="videoPages"></div>
+                <button class="pagination-btn" id="videoNext">下一页</button>
+                <div class="pagination-info" id="videoInfo"></div>
             </div>
         </div>
     </section>
 
-<!-- 页脚 -->
-<footer id="contact">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>湖边小筑</h3>
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="works.html">产品项目</a></li>
-                    <li><a href="news.html">往期案例</a></li>
-                    <li><a href="service.html">接单流程</a></li>
-                    <li><a href="recruitment.html">最新招募</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-					<li><a href="navigation.html">更多</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>友链</h3>
-                <ul>
-                    <li><a href="https://hc.ihcking.com">皇宸总部</a></li>
-                    <li><a href="https://hcbl.ihcking.com">皇宸部落</a></li>
-                    <li><a href="https://qlgh.ihcking.com">乾龙公会</a></li>
-                    <li><a href="https://qcjz.ihcking.com">卿城家族</a></li>
-                    <li><a href="https://fgsm.ihcking.com">枫谷师门</a></li>
-                    <li><a href="https://xf.ihcking.com">潇府</a></li>
-                    <li><a href="https://yg.ihcking.com">逸阁</a></li>
-                    <li><a href="https://qg.ihcking.com">卿阁</a></li>
-                    <li><a href="https://fg.ihcking.com">枫阁</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>联系我们</h3>
-                <ul>
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>聆梦·兮禾</h3>
+                    <ul>
+                    <li><a href="index.html#home">首页</a></li>
+                    <li><a href="events.html">百业活动</a></li>
+                    <li><a href="gallery.html">百业风采</a></li>
+                    <li><a href="strategy.html">萌新指南</a></li>
+                    <li><a href="realms.html">攻略心得</a></li>
+                    <li><a href="gallery.html#come">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>皇宸</h3>
+                    <ul>
+                        <li><a href="https://hc.ihcking.com">皇宸总部</a></li>
+                        <li><a href="极光科技">皇宸部落</a></li>
+                        <li><a href="https://qlgh.ihcking.com">乾龙公会</a></li>
+                        <li><a href="https://qcjz.ihcking.com">卿城家族</a></li>
+                        <li><a href="https://fgsm.ihcking.com">枫谷师门</a></li>
+                        <li><a href="https://xf.ihcking.com">潇府</a></li>
+                        <li><a href="https://yg.ihcking.com">逸阁</a></li>
+                        <li><a href="https://qg.ihcking.com">卿阁</a></li>
+                        <li><a href="https://fg.ihcking.com">枫阁</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>燕云十六声</h3>
+                    <ul>
+                        <li><a href="https://www.yysls.cn/index.html" target="_blank">游戏官网</a></li>
+                        <li><a href="https://www.yysls.cn/news/index.html" target="_blank">新闻资讯</a></li>
+                        <li><a href="https://16.163.com/map/" target="_blank">燕云地图</a></li>
+                        <li><a href="https://www.yysls.cn/faq/" target="_blank">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul>
                         <li><a href="#"><i class="fab fa-qq"></i> 3010662388</a></li>
-						<li><a href="#"><i class="fab fa-weixin"></i> 3010662388</a></li>
+                        <li><a href="#"><i class="fab fa-weixin"></i> 3010662388</a></li>
                         <li><a href="#">📧 hc@ihcking.com</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>关注我们</h3>
-                <div class="wechat-qrcode">
-                    <div class="wechat-qrcode-item">
-                        <img src="./assets/img/xfdyh.jpg" alt="微信公众号1">
-                        <p>潇府订阅号</p>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>关注我们</h3>
+                    <div class="wechat-qrcode">
+                        <div class="wechat-qrcode-item">
+                            <img src=".././assets/img/xfdyh.jpg" alt="皇宸订阅号">
+                            <p>皇宸订阅号</p>
+                        </div>
+                        <div class="wechat-qrcode-item">
+                            <img src=".././assets/img/hcwfh.jpg" alt="皇宸服务号">
+                            <p>皇宸服务号</p>
+                        </div>
                     </div>
-                    <div class="wechat-qrcode-item">
-                        <img src="./assets/img/hcwfh.jpg" alt="微信公众号2">
-                        <p>皇宸服务号</p>
+                    <div class="social-platforms">
+                        <a href="#" title="哔哩哔哩"><i class="fab fa-bilibili"></i></a>
+                        <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#" title="抖音"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="QQ群"><i class="fab fa-qq"></i></a>
                     </div>
                 </div>
-                <div class="social-platforms">
-                    <a href="#" title="哔哩哔哩"><i class="fab fa-bilibili"></i>
-                    </a>
-                    <a href="#" title="微博"><i class="fab fa-weibo"></i>
-                    </a>
-                    <a href="#" title="抖音"><i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="#" title="QQ群"><i class="fab fa-qq"></i>
-                    </a>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 © 聆梦·兮禾. 保留所有权利.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 湖边小筑 . 保留所有权利.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 分类筛选功能
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const workCards = document.querySelectorAll('.work-card');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // 移除所有按钮的active类
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // 给当前点击的按钮添加active类
-                    this.classList.add('active');
-                    
-                    const category = this.getAttribute('data-category');
-                    
-                    // 筛选作品
-                    workCards.forEach(card => {
-                        if (category === 'all' || card.getAttribute('data-category') === category) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
+        // 全局分页配置
+        const paginationConfig = {
+            video: {
+                itemsPerPage: 9,
+                container: document.getElementById('videoGrid'),
+                pagination: document.getElementById('videoPagination'),
+                prevBtn: document.getElementById('videoPrev'),
+                nextBtn: document.getElementById('videoNext'),
+                pagesContainer: document.getElementById('videoPages'),
+                infoContainer: document.getElementById('videoInfo'),
+                currentPage: 1,
+                currentCategory: 'all',
+                searchTerm: '',
+                noResults: document.getElementById('noResults')
+            }
+        };
+
+        // 通用淡入动画
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.style.opacity = 1;
+                });
+            }, { threshold: .1 });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    e.preventDefault();
+                    const target = document.querySelector(a.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                 });
             });
-            
-            // 搜索框功能
-            const searchInput = document.querySelector('.search-input');
-            const searchBtn = document.querySelector('.search-btn');
-            
-            function performSearch() {
-                const searchTerm = searchInput.value.toLowerCase();
-                
-                workCards.forEach(card => {
-                    const title = card.querySelector('h3').textContent.toLowerCase();
-                    const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
-                    const category = card.querySelector('.work-category').textContent.toLowerCase();
-                    const workId = card.getAttribute('data-id');
-                    const details = Array.from(card.querySelectorAll('.detail-tag')).map(tag => tag.textContent.toLowerCase());
-                    const description = card.querySelector('.work-description').textContent.toLowerCase();
+
+            // 导航栏滚动变色
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.backgroundColor = 'rgba(26, 26, 46, .95)';
+                    header.style.boxShadow = '0 2px 20px rgba(0,0,0,.2)';
+                } else {
+                    header.style.backgroundColor = 'rgba(26, 26, 46, .9)';
+                    header.style.boxShadow = '0 2px 20px rgba(0,0,0,.1)';
+                }
+            });
+
+            // 初始化分页
+            initPagination();
+        });
+
+        // 分页功能
+        function initPagination() {
+            // 初始化视频分页
+            setupPagination(paginationConfig.video, 'video');
+
+            // 分类切换逻辑（精彩视频）
+            const videoTags = document.querySelectorAll('.video-tags .tag');
+            videoTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    videoTags.forEach(t => t.classList.remove('active'));
+                    tag.classList.add('active');
+                    const category = tag.dataset.video;
+                    paginationConfig.video.currentCategory = category;
+                    paginationConfig.video.currentPage = 1;
                     
-                    if (title.includes(searchTerm) || tags.some(tag => tag.includes(searchTerm)) || 
-                        category.includes(searchTerm) || workId.includes(searchTerm) || details.some(detail => detail.includes(searchTerm)) || 
-                        description.includes(searchTerm)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    // 更新分页
+                    updatePagination(paginationConfig.video, 'video');
+                });
+            });
+        }
+
+        // 设置分页功能
+        function setupPagination(config, module) {
+            // 初始显示所有项目
+            updatePagination(config, module);
+            
+            // 上一页按钮事件
+            config.prevBtn.addEventListener('click', () => {
+                if (config.currentPage > 1) {
+                    config.currentPage--;
+                    updatePagination(config, module);
+                }
+            });
+            
+            // 下一页按钮事件
+            config.nextBtn.addEventListener('click', () => {
+                const filteredItems = getFilteredItems(config, module);
+                const totalPages = Math.ceil(filteredItems.length / config.itemsPerPage);
+                
+                if (config.currentPage < totalPages) {
+                    config.currentPage++;
+                    updatePagination(config, module);
+                }
+            });
+        }
+
+        // 获取过滤后的项目
+        function getFilteredItems(config, module) {
+            let items = [];
+            const allItems = Array.from(config.container.children);
+            
+            // 首先根据分类过滤
+            if (config.currentCategory !== 'all') {
+                items = allItems.filter(item => 
+                    item.dataset.video === config.currentCategory
+                );
+            } else {
+                items = allItems;
+            }
+            
+            // 然后根据搜索关键词过滤
+            if (config.searchTerm) {
+                const searchTerm = config.searchTerm.toLowerCase();
+                items = items.filter(item => {
+                    const title = item.querySelector('.video-title').textContent.toLowerCase();
+                    const desc = item.querySelector('.video-desc').textContent.toLowerCase();
+                    return title.includes(searchTerm) || desc.includes(searchTerm);
                 });
             }
             
-            searchBtn.addEventListener('click', performSearch);
-            searchInput.addEventListener('keyup', function(e) {
-                if (e.key === 'Enter') {
-                    performSearch();
+            return items;
+        }
+
+        // 更新分页显示
+        function updatePagination(config, module) {
+            const filteredItems = getFilteredItems(config, module);
+            const totalItems = filteredItems.length;
+            const totalPages = Math.ceil(totalItems / config.itemsPerPage);
+            
+            // 显示/隐藏无结果提示
+            if (totalItems === 0) {
+                config.noResults.style.display = 'block';
+                config.pagination.style.display = 'none';
+            } else {
+                config.noResults.style.display = 'none';
+                config.pagination.style.display = 'flex';
+            }
+            
+            // 确保当前页不超过总页数
+            if (config.currentPage > totalPages && totalPages > 0) {
+                config.currentPage = totalPages;
+            } else if (totalPages === 0) {
+                config.currentPage = 1;
+            }
+            
+            // 隐藏所有项目
+            Array.from(config.container.children).forEach(item => {
+                item.classList.add('hidden');
+            });
+            
+            // 显示当前页的项目
+            const startIndex = (config.currentPage - 1) * config.itemsPerPage;
+            const endIndex = Math.min(startIndex + config.itemsPerPage, totalItems);
+            
+            for (let i = startIndex; i < endIndex; i++) {
+                filteredItems[i].classList.remove('hidden');
+            }
+            
+            // 更新分页控件
+            updatePaginationControls(config, totalPages, totalItems);
+        }
+
+        // 更新分页控件
+        function updatePaginationControls(config, totalPages, totalItems) {
+            // 清空页码按钮
+            config.pagesContainer.innerHTML = '';
+            
+            // 添加上一页/下一页按钮状态
+            config.prevBtn.disabled = config.currentPage === 1;
+            config.nextBtn.disabled = config.currentPage === totalPages || totalPages === 0;
+            
+            // 添加页码按钮
+            const maxVisiblePages = 5;
+            let startPage = Math.max(1, config.currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            if (endPage - startPage + 1 < maxVisiblePages) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-page';
+                pageBtn.textContent = i;
+                if (i === config.currentPage) {
+                    pageBtn.classList.add('active');
+                }
+                
+                pageBtn.addEventListener('click', () => {
+                    config.currentPage = i;
+                    updatePagination(config, 'video');
+                });
+                
+                config.pagesContainer.appendChild(pageBtn);
+            }
+            
+            // 更新信息显示
+            const startItem = totalItems === 0 ? 0 : (config.currentPage - 1) * config.itemsPerPage + 1;
+            const endItem = Math.min(config.currentPage * config.itemsPerPage, totalItems);
+            
+            config.infoContainer.textContent = 
+                `显示 ${startItem}-${endItem} 条，共 ${totalItems} 条`;
+        }
+
+        // 搜索功能
+        function searchVideos() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            paginationConfig.video.searchTerm = searchTerm;
+            paginationConfig.video.currentPage = 1;
+            
+            // 重置分类为全部
+            document.querySelectorAll('.video-tags .tag').forEach(tag => {
+                tag.classList.remove('active');
+                if (tag.dataset.video === 'all') {
+                    tag.classList.add('active');
                 }
             });
+            paginationConfig.video.currentCategory = 'all';
             
-            // 快捷标签功能
-            const quickTags = document.querySelectorAll('.quick-tag');
+            updatePagination(paginationConfig.video, 'video');
+        }
+
+        // 回车搜索
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchVideos();
+            }
+        });
+
+        // 视频播放功能
+        document.querySelectorAll('.video-item').forEach(item => {
+            const wrapper = item.querySelector('.video-wrapper');
+            const video = item.querySelector('video');
             
-            quickTags.forEach(tag => {
-                tag.addEventListener('click', function() {
-                    searchInput.value = this.textContent;
-                    performSearch();
+            wrapper.addEventListener('click', () => {
+                // 暂停所有其他视频
+                document.querySelectorAll('.video-item').forEach(v => {
+                    if (v !== item) {
+                        const vVideo = v.querySelector('video');
+                        vVideo.pause();
+                        vVideo.removeAttribute('controls');
+                        v.querySelector('.video-play-icon').style.display = 'flex';
+                    }
                 });
-            });
-            
-            // 平滑滚动
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-            
-            // 导航栏滚动效果
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
-                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
+                
+                // 播放当前视频
+                if (video.paused) {
+                    video.play();
+                    video.setAttribute('controls', 'true');
+                    wrapper.querySelector('.video-play-icon').style.display = 'none';
                 } else {
-                    header.style.backgroundColor = 'rgba(26, 26, 46, 0.9)';
-                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                    video.pause();
+                    video.removeAttribute('controls');
+                    wrapper.querySelector('.video-play-icon').style.display = 'flex';
                 }
+            });
+            
+            video.addEventListener('ended', () => {
+                video.removeAttribute('controls');
+                wrapper.querySelector('.video-play-icon').style.display = 'flex';
             });
         });
     </script>

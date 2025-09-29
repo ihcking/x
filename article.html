@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>湖边小筑 - 多领域优质合作！</title>
+	<!-- 网站标题 -->
+    <title>寒潇 - 欢迎一同开启奇妙之旅！</title>
     <!-- 网站描述 -->
-    <meta name="description" content="湖边小筑是专业的多领域接单平台，涵盖设计、开发、文案、营销等众多领域，为自由职业者和团队提供丰富的接单机会，为企业和需求方提供高效、优质的服务资源，轻松实现项目对接。">
+    <meta name="description" content="寒潇个人网站，涵盖文学创作、艺术欣赏、游戏攻略、娱乐分享以及各类项目推广。这里有丰富的内容等你探索，欢迎一同开启奇妙之旅。">
     <!-- 网站关键词 -->
-    <meta name="keywords" content="湖边小筑, 接单平台, 多领域接单, 个人接单, 团队接单, 自由职业者, 项目外包, 设计接单, 开发接单, 文案接单">
+    <meta name="keywords" content="寒潇, 寒潇勿语，文学创作, 艺术欣赏, 游戏攻略, 娱乐分享, 项目推广">
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -553,7 +554,19 @@
             color: #aaa;
             font-size: 14px;
         }
+		
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
 
+        .warning strong {
+            color: #856404;
+        }
+		
         /* 微信公众号二维码 */
         .wechat-qrcode {
             display: flex;
@@ -737,14 +750,15 @@
             <nav>
                 <div class="logo">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHptMy41LTljLjgzIDAgMS41LS42NyAxLjUtMS41UzE2LjMzIDggMTUuNSA4IDE0IDguNjcgMTQgOC41IDE0LjUgOSAxNS41IDkgNVMyLjUgMTUgMi41IDE1cy42NyAxLjUgMS41IDEuNXoiLz48L3N2Zz4=" alt="Logo">
-                    <h1>湖边小筑</h1>
+                    <h1>寒潇</h1>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="works.html">产品项目</a></li>
-                    <li><a href="news.html">往期案例</a></li>
-                    <li><a href="service.html">接单流程</a></li>
-                    <li><a href="recruitment.html">最新招募</a></li>
+                    <li><a href="notice.html">公告通知</a></li>
+                    <li><a href="news.html">最新动态</a></li>
+					<li><a href="project.html">最新推荐</a></li>
+                    <li><a href="works.html">近期作品</a></li>
+                    <li><a href="style.html">风采瞬间</a></li>
                     <li><a href="about.html">关于我们</a></li>
 					<li><a href="navigation.html">更多</a></li>
                 </ul>
@@ -756,7 +770,7 @@
     <section class="header-banner">
         <div class="container">
             <div class="header-content">
-                <h2 class="fade-in">社团剧本</h2>
+                <h2 class="fade-in">社团考核</h2>
                 <p class="fade-in delay-1">欢迎有志于配音艺术的你加入我们的大家庭！</p>
             </div>
         </div>
@@ -766,7 +780,7 @@
     <section class="recruitment-section">
         <div class="container">
             <div class="section-title">
-                <h2>【御音阁】萌新Pia戏本</h2>
+                <h2>【御音阁】基础考核本</h2>
             </div>
             
             <div class="recruitment-content">
@@ -800,137 +814,354 @@
                             </div>
                             
                             <div id="playlist" class="playlist">
-                                <div class="playlist-item active" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">PIA戏背景音乐 - BGM</div>
-                                <div class="playlist-item" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">校园日常 - 背景音效</div>
-                                <div class="playlist-item" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">古风配乐 - 水墨江湖</div>
-                                <div class="playlist-item" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3">现代都市 - 繁华街道</div>
-                                <div class="playlist-item" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3">悬疑推理 - 密室逃脱</div>
+                                <div class="playlist-item active" data-src="assets/audition/御音阁-考核本-考核用.mp3">御音阁-考核本-考核用 - BGM</div>
+								<div class="playlist-item active" data-src="assets/audition/御音阁-纯音乐循环-练习用-BGM.mp3">御音阁-考核本-练习用 - BGM</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 视频播放器 -->
-                    <div class="video-player-container">
-                        <video class="video-player" id="video-element" controls>
-                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                            您的浏览器不支持视频播放。
-                        </video>
-                        <div class="video-cover" style="background-image: url('https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg');">
-                            <div class="play-icon"></div>
-                        </div>
-                    </div>
+                    <h3 class="text-effect" data-text="御音阁·基础考核本" style="text-align: center; display: table-cell;">御音阁·基础考核本</h3><br>
+                   
+                    <p class="text-effect" data-text="长期纳新，不拒新！" style="text-align: center; display: table-cell;">长期纳新，不拒新！<br>
+					<br>小群体，无事生非，言语粗鲁，引战开瓜，请绕道而行！<br>
+                    <br>主要招收：编剧/创作，设计/美工，摄影/后期，歌手/主持，CV等，期待你的加入！<br></p>
+				<center>
+                <div class="warning">					
+                    <strong>待考核通过，方可申请加入社团，否则一概拒绝申请 !</strong>
+                </div>  
+				</center>
+                    <h3>考前须知：</h3><br>
+                    <p class="text-effect" data-text="考前须知">1. 本社团考核秉持公平、公正、公开的原则；<br>
+					<br>2. 考核人员请端正态度，互相尊重，认真对待以下考核。<br>
+                    <br>3. 考核人员须保证麦口清晰、避免环境音嘈杂。</p>
 
-                    <p class="text-effect" data-text="PIA戏说明">“PIA”原为拟声词，模拟快速翻动剧本纸张的声音，现引申为"快速进入表演状态"的互动形式。</p>
+				<center>
+                <div class="warning">					
+                    <strong>祝大家考核顺利，一路前行，御音阁欢迎你!</strong>
+                </div>  
+				</center>  
+                    
+                    <h3>00:55 第一部分：自我介绍</h3><br>
+				<div class="warning">					
+                    <strong>请考核人员进行简单自我介绍</strong>
+                </div>  
+                    <p>例：（称呼、年龄、经验、特长、上线时间等）</p><br>
+                    
+                    <h3>01:36 第二部分：普通话</h3><br>
+				<div class="warning">					
+                    <strong>考核要求：气息稳定、字音清晰准确</strong>
+                </div>  
+                    <p><strong>四声歌</strong></p><br>
+                    <p>xué hǎo shēng yùn biàn sì shēng ，yīn yáng shǎng qù yào fēn míng 。</p>
+                    <p>学好声韵辨四声，阴阳上去要分明。</p><br>
+                    <p>bù wèi fāng fǎ xū zhǎo zhǔn ，kāi qí hé cuō shǔ kǒu xíng 。</p>
+                    <p>部位方法须找准，开齐合撮属口型。</p><br>
+                    <p>shuāng chún bān bào bì bǎi bō ，dǐ shé dāng dì dòu diǎn dīng 。</p>
+                    <p>双唇班报必百波，抵舌当地斗点丁。</p><br>
+                    <p>shé gēn gāo gǒu kēng gēng gù ，shé miàn jī jié jiào jiān jīng 。</p>
+                    <p>舌根高狗坑耕故，舌面机结教尖精。</p><br>
+                    <p>qiào shé zhǔ zhēng zhēn zhì zhào ，píng shé zī zé zǎo zài zēng 。</p>
+                    <p>翘舌主争真志照，平舌资责早再增。</p><br>
+                    <p>cā yīn fā fān fēi fēn fù ，sòng qì chá chái chǎn chè chēng 。</p>
+                    <p>擦音发翻飞分副，送气茶柴产彻称。</p><br>
+                    <p>hé kǒu hū wǔ kū hú gǔ ，kāi kǒu hé pō gē ān zhēng 。</p>
+                    <p>合口呼舞枯湖古，开口河坡歌安争。</p><br>
+                    <p>cuō kǒu xū xué xún xú jù ，qí chǐ yī yōu yáo yè yīng 。</p>
+                    <p>撮口虚学寻徐剧，齐齿衣优摇夜英。</p><br>
+                    <p>qián bí ēn yīn yān wān wěn ，hòu bí áng yíng zhōng yōng shēng 。</p>
+                    <p>前鼻恩因烟弯稳，后鼻昂迎中拥生。</p><br>
+                    <p>yǎo jǐn zì tóu guī zì wěi ，yīn yáng shǎng qù jì biàn shēng 。</p>
+                    <p>咬紧字头归字尾，阴阳上去记变声。</p><br>
+                    <p>xún xù jiàn jìn jiān chí liàn ，bù nán dá dào chún hé qīng 。</p>
+                    <p>循序渐进坚持练，不难达到纯和清。</p><br>
+                    
+                    <h3>03:15 第三部分：气息</h3><br>
+				<div class="warning">					
+                    <strong>考核要求：选择一段，深吸一口气，不换气的读完，气息稳而绵长，坚持的越久越好</strong>
+                </div>   
+                    <p>（一）、数数练习</p><br>
+                    <p>1，2，3，4，5，6，.........30...40，45，50，55，60........100...</p><br>
+                    
+                    <p>（二）、数枣练习</p><br>
+                    <p>出东门，过大桥，大桥前面一树枣，拿着竿子去打枣，青的多，红的少。</p><br>
+                    <p>一个枣，两个枣，三个枣，四个枣，五个枣，六个枣，七个枣，八个枣，九个枣，十个枣，十个枣，九个枣，八个枣，七个枣，六个枣，五个枣，四个枣，三个枣，两个枣，一个枣。</p><br>
+                    <p>这是一个绕口令，一口气说完才算好。</p><br>
+                    
+                    <p>（三）、数葫芦</p><br>
+                    <p>南园里有一堆葫芦，结的滴沥嘟噜，甜葫芦，苦葫芦，红葫芦，鼓葫芦，好汉能说出二十四个葫芦:</p><br>
+                    <p>一个葫芦、两个葫芦、三个葫芦、四个葫芦....</p><br>
+                    
+                    <p>（四）、数旗</p><br>
+                    <p>广场上飘红旗，我来数数几面旗?</p><br>
+                    <p>一面旗，两面旗，三面旗，四面旗，五面旗，六面旗......一共看到N面旗</p><br>
+                    
+                    <p>（五）、气息运用</p><br>
+                    <p>害怕时的气息；寒冷时的气息；急促时的气息；疼痛时的气息；舒服时的气息。</p><br>
+                    
+                    <h3>04:35 第四部分：绕口令</h3><br>
+				<div class="warning">					
+                    <strong>考核要求：选择其中两段，完整流畅、字音准确</strong>
+                </div>                   
+                    <p>1.《捉兔》</p><br>
+                    <p>一位爷爷他姓顾，上街打醋又买布。买了布，打了醋，回头看见鹰抓兔。放下布，搁下醋，上前去追鹰和兔，飞了鹰，跑了兔。打翻醋，醋湿布。</p><br>
+                    
+                    <p>2.《小猪》</p><br>
+                    <p>小猪扛锄头，吭哧吭哧走。小鸟唱枝头，小猪扭头瞅，锄头撞石头，石头砸猪头。小猪怨锄头，锄头怨猪头。</p><br>
+                    
+                    <p>3《白石塔》</p><br>
+                    <p>白石白又滑，搬来白石搭白塔。白石塔，白石塔，白石搭石塔，白塔白石搭。搭好白石塔，白塔白又滑。</p><br>
+                    
+                    <p>4.《花鸭与彩霞》</p><br>
+                    <p>水中映着彩霞，水血游着花鸭。霞是五彩霞，鸭是麻花鸭。麻花鸭游进五彩霞，五彩露网仕麻花鸭。乐坏了鸭，拍碎了霞，分不清是鸭还是霞。</p><br>
+                    
+                    <p>5.《四和十》</p><br>
+                    <p>四和十，十和四，十四和四十，四十和十四。说好四和十得靠舌头和牙齿。谁说四十是“细席”，他的舌头没用力;谁说十四是“适时”，他的舌头没伸直。认真学，常炼习，十四、四十、四十四。</p><br>
+                    
+                    <p>6.《慈过河》</p><br>
+                    <p>哥哥弟弟坡前坐，坡上卧着一只鹅，坡下流着一条河，哥哥说：宽宽的河，弟弟说：白白的鹅。鹅要过河，河要渡鹅。不知是鹅过河，还是河渡鹅。</p><br>
+                    
+                    <p>7.《颠倒欲》</p><br>
+                    <p>咬牛奶，喝面包，夹着火车上皮包。东西街，南北走，出门看见人咬狗。拿起狗来打砖头，又怕砖头咬我手。</p><br>
+                    
+                    <p>8.《兜装豆》</p><br>
+                    <p>兜里装豆，豆装满兜，兜破漏豆。倒出豆，补破兜，补好兜，又装豆，装满兜，不漏豆。</p><br>
+                    
+                    <p>9.《狗与猴》</p><br>
+                    <p>树上卧只猴，树下蹲条狗。猴跳下来撞了狗，狗翻起来咬住猴，不知是猴咬狗，还是狗咬猴。</p><br>
+                    
+                    <p>10.《河里有只船》</p><br>
+                    <p>河里有只船，船上挂白帆，风吹帆张船向前，无风帆落停下船。</p><br>
+                    
+                    <p>11.《汤烫塔》</p><br>
+                    <p>老唐端蛋汤，踏凳登宝塔，只因凳太滑，汤洒汤烫塔。</p><br>
+                    
+                    <p>12.《蚕和蝉》</p><br>
+                    <p>这是蚕，那是蝉，蚕常在叶里藏，蝉常在林里唱。</p><br>
+                    
+                    <p>13.《六十六头牛》</p><br>
+                    <p>六十六岁的陆老头，盖了六十六间楼，买了六十六篑油，养了六十六头牛，栽了六十六梯重杨柳。六十六篓油，堆在六十六间楼;六十六头牛，扣在六十六棵垂杨柳。忽然一阵狂风起,吹倒了六十六间楼，翻倒了六十六篓油，折断了六十六梯重杨柳，砸死了六十六头牛，急煞了六十六岁的陆老头。</p><br>
+                    
+                    <p>14.《任命、人名》</p><br>
+                    <p>任命是任命，人名是人名，任命人名不能错，错了人名错任命。</p><br>
+                    
+                    <p>15.《枪和糠》</p><br>
+                    <p>墙上一个面，窗上一支枪，窗下一箩糠。枪落进了糠，糠埋住了枪，窗要糠让枪，糠要枪上墙，墙要枪上面。互相不退让，镜赶不走枪，枪也上不了窗和墙。</p><br>
+                    
+                    <p>16.《白果树》</p><br>
+                    <p>我从伯伯门前过，看见伯爹伯妈门前种着白果树，白果树上站着百十百个白斑鸠，我就拣了百十百块白石头，打那百十百个白斑鸠。</p><br>
+                    
+                    <p>17.《好孩子》</p><br>
+                    <p>张家有个小英子，王家有个小柱子。张家的小英子，自己穿衣洗袜子，天天扫地擦桌子，王家的小柱子，捡到一只皮夹子，还给后院大婶子。小英子，小柱子，他们部是好孩子。</p><br>
+                    
+                    <p>18.《送花》</p><br>
+                    <p>华华有两朵红花，红红有两朵黄花，华华想要黄花，红红想要红花，华华送给红红一朵红花，红红送给华华一朵黄花。</p><br>
+                    
+                    <h3>05:55 第五部分：诵读</h3><br>
+				<div class="warning">					
+                    <strong>考核要求：选择其中两段，完整流畅、注意停顿和重音、咬字清晰、情绪准确</strong>
+                </div> 
+                    
+                    <p>（一）、旁白</p><br>
+                    <p>中国人说：靠山吃山、靠海吃海。这不仅是一种因地制宜的变通，更是顺应自然的中国式生存之道。从古到今，这个农耕民族精心使用着脚下的每一寸土地，获取食物的活动和非凡智慧，无处不在。</p><br>
+                    <p style="text-align: right;">——《舌尖上的中国》</p><br>
+                    
+                    <p>午门，一直是紫禁城最重要的入口，从帝王将相到寻常百姓，它见证了这座古老宫殿的全部历史和几乎所有的过客。今日，与午门一同静候各地游客的，是这间展厅内的453件展品，它们能瞬间带着人们穿梭时光，回到1420年，亲历600年前紫禁城建成的时刻。</p><br>
+                    <p style="text-align: right;">——《我在故宫六百年》</p><br>
+                    
+                    <p>（二）、诗歌散文</p><br>
+                    <p>夕阳西下，晚霞轻柔地洒在可可西里的土地上，宁静而贫瘠的土地仿佛又多了几分生气。我呆呆地伫立在寒风中，影子拉得很远很远.……我的脚下就是我刚刚死去的丈夫和女儿，他们已经被蹂躏得面目全非，四周满是我部族的尸体，他们的皮全部被扒光。空气中弥漫着血腥气，地上血流成河。在夕阳的照耀下，显得愈加惨烈。我，这场大屠杀中唯一的幸存者，便成了可可西里最后的一只藏羚羊。</p><br>
+                    <p style="text-align: right;">——《最后一只藏羚羊（节选一）》</p><br>
+                    
+                    <p>我曾经无比自豪于自己是一只藏羚羊，我们生活在遥远的可可西里，那里气候恶劣，土地贫瘠，可我们却有着惊人的耐力。什么水草丰茂之地，对我们没有任何吸引力，我们常常悠然地卧在雪中，或是在猛烈的冰雹下嬉戏。那时的可可西里之于我们，无异于世外桃源，那梦一般的世界曾经是多么的美丽。然而，一声枪响穿透了可可西里的黎明，我的梦被击的粉碎。当一辆辆吉普在高原上奔驰的时候，我的无数同伴也好奇地紧随其后要和他比个高低，追逐嘛，这是我们常玩的游戏……然而这一次我们却只猜对了开头，却猜不着这结局，一只只黑洞洞的枪口正悄悄举起……从那一刻起我的种族的大杀戮便开始了，静谧的可可西里被枪声毁掉了。</p><br>
+                    <p style="text-align: right;">——《最后一只藏羚羊（节选二）》</p><br>
+                    
+                    <p>从明天起，做一个幸福的人</p><br>
+                    <p>喂马，劈柴，周游世界</p><br>
+                    <p>从明天起，关心粮食和蔬菜</p><br>
+                    <p>我有一所房子，面朝大海，春暖花开</p><br>
+                    
+                    <p style="text-align: right;">——《面朝大海，春暖花开（节选）》海子</p><br>
+                    
+                    <p>我是你河边上破旧的老水车</p><br>
+                    <p>数百年来纺着疲惫的歌</p><br>
+                    <p>我是你额上熏黑的矿灯</p><br>
+                    <p>照你在历史的隧洞里蜗行摸索</p><br>
+                    <p>我是干瘪的稻穗，是失修的路基</p><br>
+                    <p>是淤滩上的驳船</p><br>
+                    <p>把纤绳深深</p><br>
+                    <p>勒进你的肩膊</p><br>
+                    
+                    <p style="text-align: right;">——《祖国啊，我亲爱的祖国（节选）》舒婷</p><br>
+					
+                    <p>（三）、古诗</p><br>
+                    <p>春花秋月何时了？往事知多少。小楼昨夜又东风，故国不堪回首月明中。</p><br>
+                    <p>雕栏玉砌应犹在，只是朱颜改。问君能有几多愁？恰似一江春水向东流。</p><br>
+                    
+                    <p style="text-align: right;">——《虞美人·春花秋月何时了》李煜</p><br>
+                    
+                    <p>十年生死两茫茫，不思量，自难忘。千里孤坟，无处话凄凉。</p><br>
+                    <p>纵使相逢应不识，尘满面，鬓如霜。</p><br>
+                    <p>夜来幽梦忽还乡，小轩窗，正梳妆。相顾无言，惟有泪千行。</p><br>
+                    <p>料得年年肠断处，明月夜，短松冈。</p><br>
+                    
+                    <p style="text-align: right;">——《江城子·乙卯正月二十日夜记梦》苏轼</p><br>
+                    
+                    <h3>08:06 第六部分：戏感</h3><br>
+				<div class="warning">					
+                    <strong>考核要求：选择三段，情绪准确到位</strong>
+                </div>
+                    
+                    <p>悲痛：为什么...我们说好的一起仗剑天涯，劫富济贫，可最后你却变成了朝廷的鹰爪...</p><br>
+                    
+                    <p>温柔：在外可要照顾好自己，想我的时候就给我书信，有什么好玩的趣事可也一定要告诉我..</p><br>
+                    
+                    <p>气愤：怎么？这才三年不见，你都做了什么！还要我怎么去包容你，我受够了！</p><br>
+                    
+                    <p>冷漠：这句话我已经说了很多遍，可你却依旧如此，我们之间已经没有什么好谈的了。</p><br>
+                    
+                    <p>诱惑：这是去哪呢？如此良辰美景，不如我们玩一点好玩的游戏，然后我再告诉你..</p><br>
+                    
+                    <p>阴狠：我当然知道啊，但是你以为这就结束了？我告诉你们，就算事情暴露了我也要拉着你们陪葬...准备好好享受吧..</p><br>
+                    
+                    <p>生气：你能不能好好说话，每次一点点事情你就夹枪带棒的，还觉得自己挺有理的！麻烦你稍微用点脑子好吧！</p><br>
+                    
+                    <p>爆发：你为什么要这样对小宝！他才几岁啊！他知道什么！有什么事你冲我来啊！我再也不会原谅你了！</p><br>
+                    
+                    <p>哭泣：明明约好的在桃花树下把酒言欢，可你为何还躺在那里，你起来...起来啊...对不起..</p><br>
+                    
+                    <p>开心：现在是2025年5月20日，今天呢，终于可以和宝宝一起出去吃大餐了！这次我一定要多吃一点！</p><br>
+                    
+                    <p>悲伤：我一直记得我们儿时的约定，没想到，最后连你也要弃我而去...</p><br>
+                    
+                    <p>阴险：没想到，我谋划了这么多年，今日终于等到了，又岂能错失如此良机。</p><br>
+                    
+                    <p>惊恐：什么动静！！是....是你！！！你居然没死！！！当年害死你的不是我！是他们！！你听我解释！！！</p><br>
+                    
+                    <p>醉态：我...我没醉..你才醉了..说好的明天陪我一起去山上，可不能抵赖..不然..</p><br>
+                    
+                    <p>濒死：对..不起..我说过..要陪你一起去华山之巅..陪你到天涯海角...可是我..好..困...我..爱你..</p><br>
+                    
+                    <p>霸道：记住你的身份，小鬼，在这里，可是要听我的。</p><br>
+                    
+                    <p>可爱：哥哥，明天你们要去海边玩，可不可以带上我...我可是..敲级敲级厉害的。</p><br>
+                    
+                    <p>瘢狂：他死了？！他终于死了！我...我自由了，你们又是谁？是不是跟他一伙的，去死吧！</p><br>
+                    
+                    <p>变态：你说你喜欢桃花，我就为你种下桃花。可你却喜欢他，那我就帮你把他埋在树下吧。来年的桃花一定会开的特别的漂亮。</p><br>
+                    
+                    <h3>09:22 第七部分：伪音</h3><br>
+				<div class="warning">					
+                    <strong>考核要求：随意发挥，加分项</strong>
+                </div>					
+                    
+                    <p>（一）、女性音色</p><br>
+                    <p>萝莉音：哇，好香啊，姐姐，姐姐，我想吃这个，这个，还有这个...姐姐...</p><br>
+                    
+                    <p>少女音：哎，跑那么快干嘛，你等等我呀，我都跟不上了。</p><br>
+                    
+                    <p>少御音：还真是有趣，看来他已有所察觉，计划要加快了。</p><br>
+                    
+                    <p>御姐音：都多少年了，竟有如此有趣的事，诸位可愿随我一起。</p><br>
+                    
+                    <p>女王音：本宫向来如此，尔等若还有惑，便去向先生请教吧。</p><br>
+                    
+                    <p>大妈音：哎哟，今天怎么有空出来买菜啊，要不，中午来我家吃饭吧，我一个人也吃不了多少。</p><br>
+                    
+                    <p>奶奶音：这调令乃是你父皇旨意，此去江南切莫贪玩，办完事情早日回来，还有一门亲事等你呢。</p><br>
+                    
+                    <p>女妖音:（妩媚）这次几日不见，你就忘了，可真让奴家伤心呢。</p><br>
+                    
+                    <p>老鸨音：哎哟，我的王公子啊，您可算是来了，我们花花可是等了您一宿呢。</p><br>
+                    
+                    <p>正太音：我也是有名字的，等我长大了一定要名扬天下。</p><br>
+                    
+                    <p>（二）、男性音色</p><br>
+                    
+                    <p>少年音：你们居然敢在背后说我妹妹坏话，看我不撕烂你们的嘴。</p><br>
+                    
+                    <p>公子音：不过是沧海一粟，诸位可莫要再取笑我了。</p><br>
+                    
+                    <p>大叔音：小子，我看你天赋不错，不如随我一起仗剑江湖，哎哎哎，跟你开玩笑呢。</p><br>
+                    
+                    <p>爷爷音：今日北边气象异常，又是一个多事之秋啊，我倒希望是我看错了。</p><br>
+                    
+                    <p>书生音：你们莫要再逼我了，那舞刀弄剑有什么好的，岂可如此肤浅。</p><br>
+                    
+                    <p>帝王音：诸位爱卿，对北方战事，有何见解，朕已许久不见此番景象了。</p><br>
+                    
+                    <p>太监音：主子说的当然是对的，奴才当然是主子的。</p><br>
+                    
+                    <p>男妖音：这风啊，可真轻柔，这般轻柔的感觉，还真让人怀念啊。</p><br>
+                    
+                    <p>霸总音：怎么，现在想起来是不是有点晚了，今晚，就好好躺着吧。</p><br>
+					
+				<center>
+                <div class="warning">					
+                    <strong>10:40 感谢您参与本次的考核，御音阁欢迎您的加入!</strong>
+                </div>  
+				</center>  
 
-                    <p>在房间pia戏模式中进行，走本时需要保持环境安静，麦克风清晰，普通话标准，有情感起伏，演绎当前剧本中所扮演的角色。</p>
-
-                    <p>在剧本中会加入音效和唱词，不需要演绎，待音效或唱词结束后，接词演绎。</p>
-
-                    <p>在走本时，有些地方需要加入混响跟电话音等，在音效界面打开混响或者留声机（电话音）之后进行演绎，注意在不需要的时候及时关掉。</p>
-
-                    <p>欢迎大家来到Pia戏平台，在这里可以演绎各种角色，请释放自己尽情的玩耍！</p>
-
-                    <p>下面来进行相关的玩法实践吧！</p>
-
-                    <h3 class="text-effect" data-text="（一）普本">（一）普本</h3>
-                    <p>一般为选角演绎，根据选择的角色演绎整个剧本，一般有字体颜色区分，有时候会需要兼任其他角色，可酌情增加互动性使整个剧本更有氛围感。</p>
-
-                    <p>双普（1男1女）：需要由男角色来演绎周远，女角色来演绎林小满。</p>
-
-                    <p>角色：周远（男）：腼腆内向，有爱心，会画画。</p>
-                    <p>林小满（女）：活泼开朗，喜欢周远，会作图。</p>
-
-                    <p>欢迎收听由[御音阁]出品的《Pia戏萌新本-普本》，请大家尽情演绎哦</p>
-
-                    <p class="text-effect" data-text="剧本开始">[音效：下课铃声]</p>
-                    <p>林小满（活泼）："同学！你拿错作业本啦！"</p>
-                    <p class="text-effect" data-text="纸张抖动">[音效：纸张抖动声]</p>
-                    <p>林小满（疑问）："这明明是我的...咦？你怎么画了这么多小猫咪？"</p>
-                    <p class="text-effect" data-text="铅笔滚落">[音效：铅笔滚落声]</p>
-                    <p>周远（慌张）："...还给我！"</p>
-                    <p class="text-effect" data-text="快速翻页">[音效：快速翻页声]</p>
-                    <p>周远（强行解释）："这是、这是美术课的速写练习！"</p>
-                    <p>林小满（憋笑）："可是第12页画的是...穿草莓围裙的女生喂流浪猫？"</p>
-                    <p class="text-effect" data-text="椅子拖动">[音效：椅子拖动声]</p>
-                    <p>周远（结巴）："那那那是构图练习！你你你看错了！"</p>
-                    <p class="text-effect" data-text="纸张撕裂">[音效：纸张撕裂声]</p>
-                    <p>周远（着急）："糟糕！"</p>
-                    <p class="text-effect" data-text="翻包找东西">[音效：翻包找东西声]</p>
-                    <p>林小满（温柔）："用碘伏要先这样——"</p>
-                    <p class="text-effect" data-text="创可贴撕开">[音效：创可贴撕开声]</p>
-                    <p>周远（小声）："...你怎么知道我在喂后巷那只瘸腿小白？"</p>
-                    <p class="text-effect" data-text="手机震动">[音效：手机震动声]</p>
-                    <p>林小满（得意笑）："因为——我在贴社团招新海报的时候看到的呀！要来当我的搭档吗？"</p>
-
-                    <p>跟着我 左手 右手</p>
-                    <p>一个慢动作</p>
-                    <p>右手 左手慢动作重播</p>
-                    <p>这首歌 给你快乐</p>
-                    <p>你有没有爱上我</p>
-                    <p>跟着我 鼻子眼睛</p>
-                    <p>动一动耳朵</p>
-                    <p>装乖 耍帅 换不停风格</p>
-                    <p>青春有太多 未知的猜测</p>
-                    <p>成长的烦恼算什么</p>
-
-                    <!-- 更多内容省略，实际应用中可以继续添加 -->
+				<center>
+                <div class="warning">					
+                    <strong>本剧所采用的音乐、音效等素材来源于互联网，如侵权请联系作者删除。<br>著作权归原作者所有，本剧仅供配音爱好者学习、交流。</strong>
+                </div>  
+				</center>  
+				
                 </div>
 
                 <div class="sidebar">
-                    <h3>剧本信息</h3>
+                    <h3>考核信息</h3>
                     <div class="script-info">
                         <div class="script-info-item">
                             <i>🆔</i>
-                            <span>剧本ID: YG20230520</span>
+                            <span>#003</span>
                         </div>
                         <div class="script-info-item">
                             <i>📅</i>
-                            <span>发布日期: 2023-05-20</span>
+                            <span>发布日期: 2024-01-19</span>
                         </div>
                         <div class="script-info-item">
                             <i>👤</i>
-                            <span>作者: 苏瑶</span>
+                            <span>考核主办方: 御音阁</span>
                         </div>
                         <div class="script-info-item">
                             <i>📚</i>
-                            <span>字数: 3000字</span>
+                            <span>考核时长: 约10分钟</span>
                         </div>
                         <div class="script-info-item">
                             <i>🎭</i>
-                            <span>风格: 萌系</span>
+                            <span>考核形式: 线上</span>
                         </div>
                         <div class="script-info-item">
                             <i>👥</i>
-                            <span>角色: 1男2女</span>
+                            <span>参与人数: 1人</span>
                         </div>
                     </div>
 
-                    <h3>更多分类</h3>
+                    <h3>剧本标签</h3>
                     <div class="category-tags">
-                        <div class="interactive-tag">普本</div>
-                        <div class="interactive-tag">剧情歌</div>
-                        <div class="interactive-tag">读物本</div>
-                        <div class="interactive-tag">考核本</div>
-                        <div class="interactive-tag">戏曲本</div>
+                        <div class="interactive-tag">自我介绍</div>
+                        <div class="interactive-tag">普通话</div>
+                        <div class="interactive-tag">气息</div>
+                        <div class="interactive-tag">绕口令</div>
+                        <div class="interactive-tag">诵读</div>
+                        <div class="interactive-tag">戏感</div>
+                        <div class="interactive-tag">伪音</div>
                     </div>
 
-                    <h3>剧本标签</h3>
+                    <h3>考核准备</h3>
                     <div class="tags-container">
-                        <span class="tag">校园</span>
-                        <span class="tag">古风</span>
-                        <span class="tag">现代</span>
-                        <span class="tag">玄幻</span>
-                        <span class="tag">日常</span>
-                        <span class="tag">搞笑</span>
-                        <span class="tag">悬疑</span>
-                        <span class="tag">治愈</span>
-                        <span class="tag">爱情</span>
-                        <span class="tag">友情</span>
+                        <span class="tag">安静环境</span>
+                        <span class="tag">清晰设备</span>
+                        <span class="tag">稳定网络</span>
+                        <span class="tag">充足电量</span>
+                        <span class="tag">提前练习</span>
+                        <span class="tag">放松心态</span>
                     </div>
 
                     <div class="more-works">
                         <h3>更多作品</h3>
-                        <a href="#" class="more-works-btn">查看全部作品</a>
+                        <a href="works1.html" class="more-works-btn">查看全部作品</a>
                     </div>
                 </div>
             </div>
@@ -942,13 +1173,14 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
-                <h3>湖边小筑</h3>
+                <h3>寒潇</h3>
                 <ul>
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="works.html">产品项目</a></li>
-                    <li><a href="news.html">往期案例</a></li>
-                    <li><a href="service.html">接单流程</a></li>
-                    <li><a href="recruitment.html">最新招募</a></li>
+                    <li><a href="notice.html">公告通知</a></li>
+                    <li><a href="news.html">最新动态</a></li>
+					<li><a href="project.html">最新推荐</a></li>
+                    <li><a href="works.html">近期作品</a></li>
+                    <li><a href="style.html">风采瞬间</a></li>
                     <li><a href="about.html">关于我们</a></li>
 					<li><a href="navigation.html">更多</a></li>
                 </ul>
@@ -958,13 +1190,6 @@
                 <ul>
                     <li><a href="https://hc.ihcking.com">皇宸总部</a></li>
                     <li><a href="https://hcbl.ihcking.com">皇宸部落</a></li>
-                    <li><a href="https://qlgh.ihcking.com">乾龙公会</a></li>
-                    <li><a href="https://qcjz.ihcking.com">卿城家族</a></li>
-                    <li><a href="https://fgsm.ihcking.com">枫谷师门</a></li>
-                    <li><a href="https://xf.ihcking.com">潇府</a></li>
-                    <li><a href="https://yg.ihcking.com">逸阁</a></li>
-                    <li><a href="https://qg.ihcking.com">卿阁</a></li>
-                    <li><a href="https://fg.ihcking.com">枫阁</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -1000,7 +1225,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 湖边小筑 . 保留所有权利.</p>
+            <p>&copy; 2025 寒潇 . 保留所有权利.</p>
         </div>
     </div>
 </footer>
@@ -1008,7 +1233,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // 音频播放器功能
-            const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'); // 替换为实际的音频文件URL
+            const audio = new Audio('assets/audition/御音阁-考核本-考核用.mp3'); // 替换为实际的音频文件URL
             const playBtn = document.getElementById('play-btn');
             const pauseBtn = document.getElementById('pause-btn');
             const stopBtn = document.getElementById('stop-btn');
@@ -1256,7 +1481,7 @@
             const moreWorksBtn = document.querySelector('.more-works-btn');
             moreWorksBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                alert('跳转到更多作品页面');
+                alert('跳转到更多考核页面');
             });
             
             // 文字特效动画
