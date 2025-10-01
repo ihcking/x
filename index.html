@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- 网站标题 -->
-    <title>寒潇 - 欢迎开启奇妙之旅！</title>
-    <!-- 网站描述 -->
+    <title>逸 - 欢迎大家！</title>
     <meta name="description" content="寒潇个人网站，涵盖文学创作、艺术欣赏、游戏攻略、娱乐分享以及各类项目推广。这里有丰富的内容等你探索，欢迎一同开启奇妙之旅。">
-    <!-- 网站关键词 -->
     <meta name="keywords" content="寒潇, 寒潇勿语，文学创作, 艺术欣赏, 游戏攻略, 娱乐分享, 项目推广">
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* 全局样式 */
         * {
@@ -51,24 +47,6 @@
             padding: 0 20px;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: var(--gradient-bg);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(142, 45, 226, 0.4);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(142, 45, 226, 0.6);
-        }
-
         /* 导航栏 */
         header {
             background-color: rgba(26, 26, 46, 0.9);
@@ -78,6 +56,7 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
         nav {
@@ -136,579 +115,291 @@
             width: 100%;
         }
 
-        /* 英雄区域 */
-        .hero {
-            height: 100vh;
-            background: var(--gradient-bg);
-            display: flex;
-            align-items: center;
+        /* Banner轮播 */
+        .banner {
             position: relative;
+            height: 400px;
             overflow: hidden;
+            cursor: pointer;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        .banner-slides {
+            display: flex;
+            transition: transform 0.5s ease;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
-            opacity: 0.2;
-            z-index: 0;
         }
 
-        .hero-content {
+        .banner-slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
             position: relative;
-            z-index: 1;
+        }
+
+        .banner-content {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
             color: white;
-            max-width: 800px;
-        }
-
-        .hero h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
             max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+			text-align: center; /* 添加文字居中 */
+			left: 50%;
+			transform: translate(-50%, 0); /* 添加位置居中 */
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* 关于我们 */
-        .about {
-            padding: 100px 0;
-            background-color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
+        .banner-content h2 {
             font-size: 36px;
-            color: var(--dark-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--gradient-bg);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.5s ease;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        /* 最新动态 */
-        .news {
-            padding: 100px 0;
-            background-color: #f9f9f9;
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .news-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .news-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .news-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .news-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .news-card:hover .news-image img {
-            transform: scale(1.1);
-        }
-
-        .news-info {
-            padding: 20px;
-        }
-
-        .news-info h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .news-info .news-date {
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .news-info p {
-            color: #666;
             margin-bottom: 15px;
         }
 
-        /* 团队风采 */
-        .team-style {
-            padding: 100px 0;
-            background-color: white;
-        }
-
-        .team-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 250px;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
+        /* Banner小圆点 */
+        .banner-dots {
             position: absolute;
-            bottom: 0;
+            bottom: 20px;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 15px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-
-        /* 团队成员 */
-        .team-members {
-            padding: 100px 0;
-            background-color: #f9f9f9;
-        }
-
-        .members-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .member-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .member-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .member-image {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .member-info {
-            padding: 20px;
-        }
-
-        .member-info h3 {
-            font-size: 20px;
-            margin-bottom: 5px;
-            color: var(--dark-color);
-        }
-
-        .member-info .role {
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .member-info p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        /* 分支机构 */
-        .branches {
-            padding: 100px 0;
-            background-color: white;
-        }
-
-        .branches-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .branch-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .branch-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .branch-header {
-            background: var(--gradient-bg);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .branch-header h3 {
-            font-size: 22px;
-        }
-
-        .branch-content {
-            padding: 20px;
-        }
-
-        .branch-content p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .branch-content .contact-info {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             gap: 10px;
         }
 
-        .branch-content .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .branch-content .contact-item i {
-            color: var(--primary-color);
-        }
-
-        /* 发展历程 */
-        .history {
-            padding: 100px 0;
-            background-color: #f9f9f9;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 4px solid var(--accent-color);
+        .banner-dot {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            top: 15px;
-            z-index: 1;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .left {
-            left: 0;
-        }
-
-        .right {
-            left: 50%;
-        }
-
-        .left::after {
-            right: -10px;
-        }
-
-        .right::after {
-            left: -10px;
-        }
-
-        .timeline-content {
-            padding: 20px;
+        .banner-dot.active {
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .timeline-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
+        /* 顶部导航栏 */
+        .top-nav {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .timeline-content .year {
+        .top-nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-nav-links a {
+            color: white;
+            text-decoration: none;
             font-weight: bold;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            display: block;
+            transition: color 0.3s;
         }
 
-        /* 作品展示 */
-        .works {
-            padding: 100px 0;
+        .top-nav-links a:hover {
+            color: #f0f0f0;
+        }
+
+        /* 主容器 */
+        .container-nav {
+            max-width: 1200px;
+            margin: 20px auto;
+            min-height: calc(100vh - 80px);
+        }
+
+        /* 主内容区 */
+        .main-content {
             background-color: white;
-        }
-
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .work-card {
-            background: white;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .work-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .work-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .work-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .work-card:hover .work-image img {
-            transform: scale(1.1);
-        }
-
-        .work-info {
             padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .work-info h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
+        /* 时间显示 */
+        .time-display {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
         }
 
-        .work-info p {
-            color: #666;
+        /* 搜索框 */
+        .search-section {
+            margin-bottom: 20px;
+        }
+
+        .search-options {
+            display: flex;
+            justify-content: center;
             margin-bottom: 15px;
         }
 
-        .work-tags {
+        .search-option-btn {
+            padding: 8px 15px;
+            margin: 0 5px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .search-option-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .search-input {
+            width: 70%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px 0 0 30px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-button {
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* 快捷搜索标签 */
+        .quick-search-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
-        .tag {
-            background: #f0f0f0;
-            padding: 5px 10px;
+        .quick-tag {
+            padding: 5px 15px;
+            background-color: #f0f0f0;
             border-radius: 20px;
-            font-size: 12px;
-            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        /* 活动日历 */
-        .events {
-            padding: 100px 0;
-            background-color: #f9f9f9;
+        .quick-tag:hover {
+            background-color: #e0e0e0;
         }
 
-        .event-list {
+        /* 分类选项 */
+        .categories {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 8px 15px;
+            margin: 5px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+			font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 网站卡片 */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
 
-        .event-card {
-            display: flex;
-            background: white;
+        .link-card {
+            position: relative;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .event-card:hover {
-            transform: translateX(10px);
-        }
-
-        .event-date {
-            min-width: 100px;
-            background: var(--gradient-bg);
-            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+            height: 100px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-card-content {
+            z-index: 2;
+            position: relative;
             padding: 20px;
         }
 
-        .event-date .day {
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        .event-date .month {
-            font-size: 16px;
-        }
-
-        .event-info {
-            padding: 20px;
-            flex: 1;
-        }
-
-        .event-info h3 {
+        .link-title {
             font-size: 20px;
+            font-weight: bold;
             margin-bottom: 10px;
-            color: var(--dark-color);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .event-info p {
+        .link-description {
+            font-size: 12px;
             color: #666;
             margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-right: 80px;
         }
 
-        .event-info .event-meta {
-            display: flex;
-            gap: 20px;
-            color: #888;
-            font-size: 14px;
+        .qrcode-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 80px;
+            height: 80px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 3;
         }
 
-        .event-info .event-meta span {
-            display: flex;
-            align-items: center;
-        }
-
-        .event-info .event-meta i {
-            margin-right: 5px;
+        .qrcode-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* 页脚 */
@@ -755,14 +446,6 @@
             color: var(--gradient-bg);
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 14px;
-        }
-
         /* 微信公众号二维码 */
         .wechat-qrcode {
             display: flex;
@@ -771,12 +454,12 @@
 
         .wechat-qrcode-item {
             text-align: center;
-            width: 120px; /* 设置容器为正方形 */
+            width: 120px;
         }
 
         .wechat-qrcode-item img {
-            width: 120px; /* 设置二维码为正方形 */
-            height: 120px; /* 设置二维码为正方形 */
+            width: 120px;
+            height: 120px;
             background: white;
             padding: 5px;
             border-radius: 5px;
@@ -805,56 +488,24 @@
             transform: translateY(-3px);
         }
 
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+
         /* 响应式设计 */
         @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .hero h2 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
+            .banner-content h2 {
+                font-size: 28px;
             }
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .event-card {
-                flex-direction: column;
-            }
-            
-            .event-date {
-                padding: 15px;
-                min-width: 100%;
-            }
-            
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::after {
-                left: 21px;
-            }
-            
-            .right {
-                left: 0;
             }
         }
 
@@ -894,239 +545,207 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHptMy41LTljLjgzIDAgMS41LS42NyAxLjUtMS41UzE2LjMzIDggMTUuNSA4IDE0IDguNjcgMTQgOC41IDE0LjUgOSAxNS41IDkgMTVzLjY3IDEuNSAxLjUgMS41em0tNyAwYy44MyAwIDEuNS0uNjcgMS41LTEuNVM5LjMzIDggOC41IDggOCA4LjY3IDggOC41IDggOSA4LjUgOSAxNS41IDkgMTVzLjY3IDEuNSAxLjUgMS41eiIvPjwvc3ZnPg==" alt="Logo">
-                    <h1>寒潇</h1>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHptMy41LTljLjgzIDAgMS41LS42NyAxLjUtMS41UzE2LjMzIDggMTUuNSA4IDE0IDguNjcgMTQgOC41IDE0LjUgOSAxNS41IDkgMTVzLjY3IDEuNSAxLjUgMS41eiIvPjwvc3ZnPg==" alt="Logo">
+                    <h1>潇</h1>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="notice.html">公告通知</a></li>
-                    <li><a href="news.html">最新动态</a></li>
-					<li><a href="project.html">最新推荐</a></li>
-                    <li><a href="style.html">近期作品</a></li>
-                    <li><a href="works.html">精彩瞬间</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-					<li><a href="navigation.html">更多</a></li>
+                    <li><a href="https://zz123.com" target="_blank">听歌</a></li>
+                	<li><a href="https://www.qxd6.com" target="_blank">看剧</a></li>
+                	<li><a href="https://www.xiaoshuopu.com" target="_blank">看书</a></li>
+                	<li><a href="https://lnaoh.yhzu.cn" target="_blank">购物</a></li>
+                	<li><a href="https://hx.ihcking.com" target="_blank">博客</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- 英雄区域 -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="fade-in">用声音传递情感，用音色塑造世界</h2>
-                <p class="fade-in delay-1">御音阁，专注于Pia戏配音的专业社团，致力于为每部作品注入灵魂，让声音成为艺术的桥梁。</p>
-                <div class="hero-buttons fade-in delay-2">
-                    <a href="#works" class="btn">推荐作品</a>
-                    <a href="#news" class="btn btn-secondary">最新动态</a>
+    <!-- Banner轮播 -->
+    <div class="banner" id="banner">
+        <div class="banner-slides">
+            <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="banner-content">
+                    <h2>探索优质网站</h2>
+                    <p>提升你的网络体验，发现更多精彩内容</p>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1451187587991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="banner-content">
+                    <h2>发现灵感源泉</h2>
+                    <p>在书海中遨游，探索无限可能的知识海洋</p>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="banner-content">
+                    <h2>畅享游戏世界</h2>
+                    <p>遨游虚拟世界，体验无限乐趣的游戏天地</p>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="banner-dots">
+            <div class="banner-dot active"></div>
+            <div class="banner-dot"></div>
+            <div class="banner-dot"></div>
+        </div>
+    </div>
 
-    <!-- 作品展示 -->
-    <section id="works" class="works">
-        <div class="container">
-            <div class="section-title">
-                <h2>近期作品</h2>
-            </div>
-            <div class="works-grid">
-                <div class="work-card">
-                    <div class="work-image">
-                        <img src="./assets/img/御音阁招新.png" alt="作品1">
-                    </div>
-                    <div class="work-info">
-                        <h3>【御音阁】新人引导本</h3>
-                        <p>新人引导本，欢迎大家使用！</p>
-                        <div class="work-tags">
-                            <span class="tag">御音阁</span>
-                            <span class="tag">社团</span>
-                            <span class="tag">新人</span>
-                        </div>
-                        <a href="https://www.aipiaxi.com/article-detail/245425" class="btn">查看详情</a>
-                    </div>
+    <!-- 主容器 -->
+    <div class="container-nav">
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 时间显示 -->
+            <div class="time-display" id="current-time"></div>
+            
+            <!-- 搜索功能 -->
+            <div class="search-section">
+                <div class="search-options">
+                    <button class="search-option-btn active" data-option="local">本地搜索</button>
+                    <button class="search-option-btn" data-option="global">全网搜索</button>
                 </div>
-                <div class="work-card">
-                    <div class="work-image">
-                        <img src="./assets/img/gywm.png" alt="作品2">
-                    </div>
-                    <div class="work-info">
-                        <h3>【御音阁】萌新Pia戏本</h3>
-                        <p>萌新Pia戏本，欢迎大家使用！</p>
-                        <div class="work-tags">
-                            <span class="tag">御音阁</span>
-                            <span class="tag">社团</span>
-                            <span class="tag">萌新</span>
-                        </div>
-                        <a href="https://www.aipiaxi.com/article-detail/502703" class="btn">查看详情</a>
-                    </div>
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="搜索网站或内容...">
+                    <button class="search-button">搜索</button>
                 </div>
-                <div class="work-card">
-                    <div class="work-image">
-                        <img src="./assets/img/gywm.png" alt="作品3">
-                    </div>
-                    <div class="work-info">
-                        <h3>【御音阁】基础考核本</h3>
-                        <p>基础考核本，欢迎大家使用！</p>
-                        <div class="work-tags">
-                            <span class="tag">御音阁</span>
-                            <span class="tag">社团</span>
-                            <span class="tag">考核</span>
-                        </div>
-                        <a href="article3.html" class="btn">查看详情</a>
-                    </div>
+                
+                <!-- 快捷搜索标签 -->
+                <div class="quick-search-tags">
+                    <div class="quick-tag" data-category="all">百度</div>
+                    <div class="quick-tag" data-category="entertainment">知乎</div>
+                    <div class="quick-tag" data-category="tech">GitHub</div>
+                    <div class="quick-tag" data-category="entertainment">哔哩哔哩</div>
+                    <div class="quick-tag" data-category="entertainment">腾讯视频</div>
+                    <div class="quick-tag" data-category="entertainment">网易云音乐</div>
+                    <div class="quick-tag" data-category="shopping">淘宝</div>
+                    <div class="quick-tag" data-category="shopping">京东</div>
+                </div>
+                
+                <!-- 分类选项 -->
+                <div class="categories">
+                    <button class="category-btn active" data-category="all">全部</button>
+                <button class="category-btn" data-category="hc">皇宸</button>
+                <button class="category-btn" data-category="rm">热门</button>
+                <button class="category-btn" data-category="tj">推荐</button>
+                <button class="category-btn" data-category="cy">常用</button>
+                <button class="category-btn" data-category="ys">演示</button>
+                <button class="category-btn" data-category="gj">资源</button>
                 </div>
             </div>
-        </div>
-    </section>
-	
-    <!-- 最新动态 -->
-    <section id="news" class="news">
-        <div class="container">
-            <div class="section-title">
-                <h2>最新动态</h2>
-            </div>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="./assets/img/gywm.png" alt="动态1">
+            
+            <!-- 网站卡片 -->
+            <div class="links-grid" id="links-grid">
+                
+                <div class="link-card" data-name="皇宸" data-url="https://hc.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://hc.ihcking.com/" alt="皇宸 QR Code">
                     </div>
-                    <div class="news-info">
-                        <span class="news-date">2023年1月27日</span>
-                        <h3>社团正式成立</h3>
-                        <p>御音阁（ID：9925）<br>感谢所有成员的辛勤付出！<br>未来我们将带来更多优质作品。</p>
-                        <a href="#" class="btn">查看详情</a>
+                    <div class="link-card-content">
+                        <a href="https://hc.ihcking.com/" target="_blank" class="link-title">皇宸</a>
+                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
                     </div>
                 </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="./assets/img/gywm.png" alt="动态2">
+                
+                <div class="link-card" data-name="皇宸部落" data-url="https://hcbl.ihcking.com/" data-description="中文互联网高质量的问答社区和创作者聚集的原创内容平台。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://hcbl.ihcking.com/" alt="皇宸部落 QR Code">
                     </div>
-                    <div class="news-info">
-                        <span class="news-date">2025年3月20日</span>
-                        <h3>社团设立分社</h3>
-                        <p>御音阁（ID：9925）<br>湖边小筑（ID：313002）<br>聆风学府（ID：688715）</p>
-                        <a href="#" class="btn">查看详情</a>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="./assets/img/gywm.png" alt="动态3">
-                    </div>
-                    <div class="news-info">
-                        <span class="news-date">2025年4月15日</span>
-                        <h3>社团网站成立</h3>
-                        <p>御音阁（ID：9925）<br>感谢所有成员的辛勤付出！<br>未来我们将带来更多优质作品。</p>
-                        <a href="#" class="btn">查看详情</a>
+                    <div class="link-card-content">
+                        <a href="https://hcbl.ihcking.com/" target="_blank" class="link-title">皇宸部落</a>
+                        <div class="link-description">中文互联网高质量的问答社区和创作者聚集的原创内容平台。</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 团队风采 -->
-    <section id="team-style" class="team-style">
-        <div class="container">
-            <div class="section-title">
-                <h2>风采瞬间</h2>
-            </div>
-            <div class="team-gallery">
-                <div class="gallery-item">
-                    <img src="./assets/img/gywm.png" alt="团队照片1">
-                    <div class="gallery-overlay">
-                        <h3>2023年春季团建活动</h3>
+                
+                <div class="link-card" data-name="乾龙公会" data-url="https://qlgh.ihcking.com/" data-description="全球最大的代码托管平台，开发者可以在这里协作开发项目。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qlgh.ihcking.com/" alt="乾龙公会 QR Code">
+                    </div>
+                    <div class="link-card-content">
+                        <a href="https://qlgh.ihcking.com/" target="_blank" class="link-title">乾龙公会</a>
+                        <div class="link-description">全球最大的代码托管平台，开发者可以在这里协作开发项目。</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="./assets/img/gywm.png" alt="团队照片2">
-                    <div class="gallery-overlay">
-                        <h3>录音室工作花絮</h3>
+                
+                <div class="link-card" data-name="卿城家族" data-url="https://qcjz.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qcjz.ihcking.com/" alt="卿城家族 QR Code">
+                    </div>
+                    <div class="link-card-content">
+                        <a href="https://qcjz.ihcking.com/" target="_blank" class="link-title">卿城家族</a>
+                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="./assets/img/gywm.png" alt="团队照片3">
-                    <div class="gallery-overlay">
-                        <h3>年度颁奖典礼</h3>
+                
+                <div class="link-card" data-name="枫谷师门" data-url="https://fgsm.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://fgsm.ihcking.com/" alt="枫谷师门 QR Code">
+                    </div>
+                    <div class="link-card-content">
+                        <a href="https://fgsm.ihcking.com/" target="_blank" class="link-title">枫谷师门</a>
+                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="./assets/img/gywm.png" alt="团队照片4">
-                    <div class="gallery-overlay">
-                        <h3>配音工作坊</h3>
+                <div class="link-card" data-name="潇府" data-url="https://xf.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://xf.ihcking.com/" alt="潇府 QR Code">
+                    </div>
+                    <div class="link-card-content">
+                        <a href="https://xf.ihcking.com/" target="_blank" class="link-title">潇府</a>
+                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 团队成员 -->
-    <section id="team-members" class="team-members">
-        <div class="container">
-            <div class="section-title">
-                <h2>亲友成员</h2>
-            </div>
-            <div class="members-grid">
-                <div class="member-card">
-                    <div class="member-image">
-                        <img src="./assets/img/touxiang/泠枫.png" alt="成员1">
+                <div class="link-card" data-name="逸阁" data-url="https://yg.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://yg.ihcking.com/" alt="逸阁 QR Code">
                     </div>
-                    <div class="member-info">
-                        <h3>泠枫</h3>
-                        <span class="role">社长 / 配音导演</span>
-                        <p>拥有二年配音经验<br>擅长古风和现代题材，曾为多部知名作品担任配音导演。</p>
+                    <div class="link-card-content">
+                        <a href="https://yg.ihcking.com/" target="_blank" class="link-title">逸阁</a>
+                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
                     </div>
                 </div>
-                <div class="member-card">
-                    <div class="member-image">
-                        <img src="./assets/img/touxiang/king.png" alt="成员2">
+                <div class="link-card" data-name="卿阁" data-url="https://qg.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qg.ihcking.com/" alt="卿阁 QR Code">
                     </div>
-                    <div class="member-info">
-                        <h3>King</h3>
-                        <span class="role">副社长 / 主配音演员</span>
-                        <p>文学功底深厚<br>负责剧本的改编和优化，为作品注入更多文学魅力。</p>
-                    </div>
-                </div>
-                <div class="member-card">
-                    <div class="member-image">
-                        <img src="./assets/img/touxiang/风.png" alt="成员3">
-                    </div>
-                    <div class="member-info">
-                        <h3>风</h3>
-                        <span class="role">主配音演员</span>
-                        <p>声音清脆温柔<br>擅长塑造男性角色，尤其在悬疑和科幻题材中有出色表现。</p>
+                    <div class="link-card-content">
+                        <a href="https://qg.ihcking.com/" target="_blank" class="link-title">卿阁</a>
+                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
                     </div>
                 </div>
-                <div class="member-card">
-                    <div class="member-image">
-                        <img src="./assets/img/touxiang/风.png" alt="成员4">
+                <div class="link-card" data-name="枫阁" data-url="https://fg.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://fg.ihcking.com/" alt="枫阁 QR Code">
                     </div>
-                    <div class="member-info">
-                        <h3>风</h3>
-                        <span class="role">配音演员</span>
-                        <p>声音清脆温柔<br>擅长塑造男性角色，尤其在古风题材中有出色表现。</p>
+                    <div class="link-card-content">
+                        <a href="https://fg.ihcking.com/" target="_blank" class="link-title">枫阁</a>
+                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
                     </div>
                 </div>
-
+                <div class="link-card" data-name="御音阁" data-url="https://yyg.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                    <div class="qrcode-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://yyg.ihcking.com/" alt="御音阁 QR Code">
+                    </div>
+                    <div class="link-card-content">
+                        <a href="https://yyg.ihcking.com/" target="_blank" class="link-title">御音阁</a>
+                        <div class="link-description">专注于Pia戏配音的有声社团，欢迎加入我们。</div>
+                    </div>
+                </div>
+				
             </div>
         </div>
-    </section>
+    </div>
 
 <!-- 页脚 -->
 <footer id="contact">
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
-                <h3>寒潇</h3>
+                <h3>潇</h3>
                 <ul>
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="notice.html">公告通知</a></li>
-                    <li><a href="news.html">最新动态</a></li>
-					<li><a href="project.html">最新推荐</a></li>
-                    <li><a href="works.html">近期作品</a></li>
-                    <li><a href="style.html">风采瞬间</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-					<li><a href="navigation.html">更多</a></li>
+                    <li><a href="https://zz123.com" target="_blank">听歌</a></li>
+                	<li><a href="https://www.qxd6.com" target="_blank">看剧</a></li>
+                	<li><a href="https://www.xiaoshuopu.com" target="_blank">看书</a></li>
+                	<li><a href="https://lnaoh.yhzu.cn" target="_blank">购物</a></li>
+                	<li><a href="https://hx.ihcking.com" target="_blank">博客</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -1175,46 +794,197 @@
 </footer>
 
     <script>
-        // 滚动动画
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
+        // 动态时间显示
+        function updateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const weekdays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            const weekday = weekdays[now.getDay()];
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-            
-            // 平滑滚动
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
+            document.getElementById('current-time').textContent = 
+                `${year}年${month}月${day}日 ${weekday} ${hours}:${minutes}:${seconds}`;
+        }
+        
+        setInterval(updateTime, 1000);
+        updateTime();
+        
+        // Banner轮播功能
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const dots = document.querySelectorAll('.banner-dot');
+        const slidesContainer = document.querySelector('.banner-slides');
+        const bannerElement = document.getElementById('banner');
+        
+        function showSlide(index) {
+            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next >= slides.length) next = 0;
+            showSlide(next);
+        }
+        
+        // 点击小圆点切换幻灯片
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        // 自动轮播
+        setInterval(nextSlide, 5000);
+        
+        // Banner图片点击跳转功能
+        slides[0].addEventListener('click', () => {
+            window.open('https://hcbl.ihcking.com/', '_blank');
+        });
+        
+        slides[1].addEventListener('click', () => {
+            window.open('https://qg.ihcking.com/', '_blank');
+        });
+        
+        slides[2].addEventListener('click', () => {
+            window.open('https://yyg.ihcking.com/', '_blank');
+        });
+        
+        // 搜索
+        const searchButton = document.querySelector('.search-button');
+        const searchInput = document.querySelector('.search-input');
+        const searchOptionButtons = document.querySelectorAll('.search-option-btn');
+        const linkCards = document.querySelectorAll('.link-card');
+        let currentSearchOption = 'local'; // 默认为本地搜索
+        
+        // 切换搜索选项
+        searchOptionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                searchOptionButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                currentSearchOption = button.dataset.option;
+                
+                // 如果切换到本地搜索，显示所有网站卡片
+                if (currentSearchOption === 'local') {
+                    linkCards.forEach(card => {
+                        card.style.display = 'block';
                     });
-                });
-            });
-            
-            // 导航栏滚动效果
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
-                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
-                } else {
-                    header.style.backgroundColor = 'rgba(26, 26, 46, 0.9)';
-                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
                 }
             });
+        });
+        
+        // 执行本地搜索
+        function performLocalSearch(term) {
+            if (term.trim() === '') {
+                // 如果搜索词为空，显示所有网站卡片
+                linkCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+                return;
+            }
+            
+            linkCards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const url = card.dataset.url.toLowerCase();
+                const description = card.dataset.description.toLowerCase();
+                const searchTerm = term.toLowerCase();
+                
+                if (name.includes(searchTerm) || url.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        // 搜索框功能按钮点击事件
+        searchButton.addEventListener('click', () => {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                if (currentSearchOption === 'local') {
+                    performLocalSearch(searchTerm);
+                } else {
+                    window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(searchTerm)}`);
+                }
+            } else {
+                // 如果搜索词为空，显示所有网站卡片
+                linkCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+            }
+        });
+        
+        // 回车键触发搜索
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchButton.click();
+            }
+        });
+        
+        // 分类切换功能
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 移除所有分类按钮的active类
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // 为当前点击的按钮添加active类
+                button.classList.add('active');
+                
+                const selectedCategory = button.dataset.category;
+                
+                // 显示或隐藏网站卡片
+                linkCards.forEach(card => {
+                    if (selectedCategory === 'all' || card.dataset.category === selectedCategory) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // 快捷标签交互
+        const quickTags = document.querySelectorAll('.quick-tag');
+        
+        quickTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const tagText = tag.textContent;
+                searchInput.value = tagText;
+                searchButton.click();
+            });
+        });
+
+        // 滚动动画
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.9)';
+                header.style.boxShadow = '0 2px 20px rgba(255, 255, 255, 0.1)';
+            }
         });
     </script>
 </body>
