@@ -2,39 +2,54 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>逸 - 欢迎大家！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>逸 - 寒潇个人站 | 文学创作·游戏攻略·艺术分享</title>
     <meta name="description" content="寒潇个人网站，涵盖文学创作、艺术欣赏、游戏攻略、娱乐分享以及各类项目推广。这里有丰富的内容等你探索，欢迎一同开启奇妙之旅。">
-    <meta name="keywords" content="寒潇, 寒潇勿语，文学创作, 艺术欣赏, 游戏攻略, 娱乐分享, 项目推广">
+    <meta name="keywords" content="寒潇, 寒潇勿语, 文学创作, 艺术欣赏, 游戏攻略, 娱乐分享, 项目推广, 皇宸, 逸阁">
+    <link rel="icon" type="image/x-icon" href="https://www.yysls.cn/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* 全局样式 */
+        /* ========== 全局样式 - 完整继承“禾”的现代风格 ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+            font-family: 'Microsoft YaHei', '微软雅黑', 'Segoe UI', Arial, sans-serif;
         }
 
         :root {
-            --primary-color: #8e2de2; /* 紫色 */
-            --secondary-color: #4a00e0; /* 深紫色 */
-            --accent-color: #e94057; /* 红色 */
+            --primary-color: #8e2de2;
+            --secondary-color: #4a00e0;
+            --accent-color: #e94057;
+            --fun-color: #ff9a3c;
+            --success-color: #00c853;
+            --info-color: #2979ff;
             --dark-color: #1a1a2e;
             --light-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --text-lighter: #888;
+            --border-color: #eaeaea;
             --gradient-bg: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --shadow-deep: 0 12px 36px rgba(0, 0, 0, 0.12);
+            --nav-height: 70px;
         }
 
         body {
             background-color: var(--light-color);
-            color: var(--dark-color);
+            color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: var(--nav-height);
+            font-size: 16px;
         }
 
         a {
             text-decoration: none;
             color: inherit;
+            transition: all 0.25s ease;
         }
 
         ul {
@@ -42,93 +57,222 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* 导航栏 */
+        /* ========== 页头导航栏 (禾风格，内容为逸站导航) ========== */
         header {
-            background-color: rgba(26, 26, 46, 0.9);
+            background-color: rgba(26, 26, 46, 0.98);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        nav {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         .logo {
             display: flex;
             align-items: center;
+            gap: 14px;
+            z-index: 1001;
         }
 
         .logo img {
-            height: 40px;
-            margin-right: 10px;
+            height: 42px;
+            width: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
         }
 
         .logo h1 {
             color: white;
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 800;
             background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            color: #b0b0d0;
+            font-size: 12px;
+            margin-top: 2px;
+            letter-spacing: 0.3px;
+            opacity: 0.9;
         }
 
         .nav-links {
             display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 6px;
         }
 
         .nav-links li {
-            margin-left: 30px;
+            position: relative;
         }
 
         .nav-links a {
-            color: white;
+            color: #e0e0ff;
             font-weight: 500;
-            position: relative;
-            padding: 5px 0;
+            font-size: 14px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
         }
 
-        .nav-links a::after {
+        .nav-links a i {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .nav-active {
+            color: white !important;
+            background: linear-gradient(135deg, rgba(142, 45, 226, 0.2), rgba(233, 64, 87, 0.2)) !important;
+            font-weight: 600 !important;
+        }
+
+        .nav-active::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: -2px;
+            left: 12px;
+            right: 12px;
+            height: 3px;
             background: var(--gradient-bg);
-            transition: width 0.3s ease;
+            border-radius: 2px;
         }
 
-        .nav-links a:hover::after {
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 24px;
+            justify-content: space-between;
+            z-index: 1001;
+            padding: 5px;
+            border-radius: 6px;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
             width: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+            transition: all 0.3s ease;
         }
 
-        /* Banner轮播 */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        @media (max-width: 992px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: var(--nav-height);
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                background-color: rgba(26, 26, 46, 0.98);
+                backdrop-filter: blur(15px);
+                padding: 20px 24px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                z-index: 999;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+            }
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .nav-links li { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+            .nav-links a { padding: 18px 20px; font-size: 15px; justify-content: space-between; }
+            .nav-active::before { left: 0; right: auto; width: 4px; height: 100%; bottom: 0; background: var(--gradient-bg); }
+        }
+
+        @media (max-width: 768px) {
+            :root { --nav-height: 64px; }
+            .logo h1 { font-size: 20px; }
+            .logo img { height: 36px; width: 36px; }
+        }
+
+        /* ========== 主内容容器 ========== */
+        .container-nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== Banner轮播 - 宽度与主内容完全一致 ========== */
         .banner {
             position: relative;
             height: 400px;
             overflow: hidden;
             cursor: pointer;
+            border-radius: 24px;
+            margin: 20px 0 30px;
+            width: 100%;
+            box-shadow: var(--shadow-medium);
         }
-
+        @media (max-width: 768px) {
+            .banner { height: 260px; border-radius: 20px; }
+        }
         .banner-slides {
             display: flex;
             transition: transform 0.5s ease;
             height: 100%;
         }
-
         .banner-slide {
             min-width: 100%;
             height: 100%;
@@ -136,25 +280,17 @@
             background-position: center;
             position: relative;
         }
-
         .banner-content {
             position: absolute;
             bottom: 50px;
-            left: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
             color: white;
-            max-width: 600px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-			text-align: center; /* 添加文字居中 */
-			left: 50%;
-			transform: translate(-50%, 0); /* 添加位置居中 */
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+            width: 90%;
         }
-
-        .banner-content h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-
-        /* Banner小圆点 */
+        .banner-content h2 { font-size: 2.5rem; margin-bottom: 15px; }
         .banner-dots {
             position: absolute;
             bottom: 20px;
@@ -164,266 +300,212 @@
             justify-content: center;
             gap: 10px;
         }
-
         .banner-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.5);
             cursor: pointer;
-            transition: background-color 0.3s;
         }
+        .banner-dot.active { background-color: white; }
 
-        .banner-dot.active {
-            background-color: white;
-        }
-
-        /* 顶部导航栏 */
-        .top-nav {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .top-nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .top-nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .top-nav-links a:hover {
-            color: #f0f0f0;
-        }
-
-        /* 主容器 */
-        .container-nav {
-            max-width: 1200px;
-            margin: 20px auto;
-            min-height: calc(100vh - 80px);
-        }
-
-        /* 主内容区 */
+        /* 主内容卡片区 */
         .main-content {
             background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: var(--shadow-light);
         }
-
-        /* 时间显示 */
         .time-display {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 1.2rem;
-            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            background: var(--gradient-bg);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
             font-weight: bold;
         }
 
-        /* 搜索框 */
-        .search-section {
-            margin-bottom: 20px;
-        }
-
+        /* 搜索区样式 (图标已更新) */
         .search-options {
             display: flex;
             justify-content: center;
-            margin-bottom: 15px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
-
         .search-option-btn {
-            padding: 8px 15px;
-            margin: 0 5px;
-            background-color: #f0f0f0;
+            padding: 8px 20px;
+            background: #f0f0f0;
             border: none;
-            border-radius: 20px;
+            border-radius: 40px;
             cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-
+        .search-option-btn i {
+            font-size: 14px;
+        }
         .search-option-btn.active {
-            background-color: var(--primary-color);
+            background: var(--gradient-bg);
             color: white;
+            box-shadow: 0 2px 8px rgba(142,45,226,0.3);
         }
-
         .search-box {
             display: flex;
             justify-content: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-
         .search-input {
             width: 70%;
-            padding: 12px 20px;
+            padding: 14px 20px;
             border: 1px solid #ddd;
-            border-radius: 30px 0 0 30px;
+            border-radius: 50px 0 0 50px;
             font-size: 16px;
             outline: none;
         }
-
         .search-button {
-            padding: 12px 25px;
-            background-color: var(--primary-color);
+            padding: 14px 30px;
+            background: var(--gradient-bg);
             color: white;
             border: none;
-            border-radius: 0 30px 30px 0;
+            border-radius: 0 50px 50px 0;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            font-weight: bold;
         }
-
-        .search-button:hover {
-            background-color: var(--secondary-color);
-        }
-
-        /* 快捷搜索标签 */
         .quick-search-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
-
         .quick-tag {
-            padding: 5px 15px;
-            background-color: #f0f0f0;
-            border-radius: 20px;
-            font-size: 14px;
+            padding: 5px 18px;
+            background: #f0f0f0;
+            border-radius: 30px;
+            font-size: 13px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: 0.2s;
         }
-
         .quick-tag:hover {
-            background-color: #e0e0e0;
+            background: var(--primary-color);
+            color: white;
         }
-
-        /* 分类选项 */
         .categories {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
             flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
         }
-
         .category-btn {
-            padding: 8px 15px;
-            margin: 5px;
-            background-color: #f0f0f0;
+            padding: 8px 20px;
+            background: #f0f0f0;
             border: none;
-            border-radius: 20px;
+            border-radius: 40px;
             cursor: pointer;
-			font-weight: bold;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: 0.2s;
         }
-
         .category-btn.active {
-            background-color: var(--primary-color);
+            background: var(--gradient-bg);
             color: white;
         }
 
-        /* 网站卡片 */
+        /* 卡片网格 - 减小高度，方形二维码边框 */
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
         }
-
         .link-card {
             position: relative;
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-light);
             transition: transform 0.3s, box-shadow 0.3s;
             background: white;
-            height: 100px;
+            min-height: 118px;
             display: flex;
             flex-direction: column;
-            cursor: pointer; /* 添加指针样式，提示可点击 */
+            cursor: pointer;
+            border: 1px solid var(--border-color);
         }
-
         .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-deep);
         }
-
         .link-card-content {
-            z-index: 2;
-            position: relative;
-            padding: 20px;
+            padding: 14px 16px;
             flex-grow: 1;
         }
-
         .link-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            font-size: 1.25rem;
+            font-weight: 800;
+            background: var(--gradient-bg);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 6px;
+            display: inline-block;
         }
-
         .link-description {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 15px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-right: 85px;
+            line-height: 1.35;
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            margin-right: 80px;
         }
-
+        /* 方形二维码容器，带边框凸显方形 */
         .qrcode-container {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 80px;
-            height: 80px;
-            background-color: #f1f1f1;
-            border-radius: 5px;
+            top: 12px;
+            right: 12px;
+            width: 70px;
+            height: 70px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e2e2;
             overflow: hidden;
-            z-index: 3;
-            cursor: default; /* 二维码区域不显示指针 */
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            z-index: 2;
         }
-
         .qrcode-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
-        /* 页脚 */
+        /* ========== 页脚样式 - 完全复刻“禾”站效果 ========== */
         footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 50px 0 20px;
+            padding: 40px 0 20px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            margin-top: 60px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 24px;
+            margin-bottom: 30px;
         }
 
         .footer-column h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 16px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .footer-column h3::after {
@@ -431,64 +513,32 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
-            height: 2px;
+            width: 30px;
+            height: 3px;
             background: var(--gradient-bg);
         }
 
         .footer-column ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-column ul li a {
             color: #aaa;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-column ul li a i {
+            margin-right: 8px;
+            font-size: 13px;
+            width: 16px;
         }
 
         .footer-column ul li a:hover {
-            color: var(--gradient-bg);
-        }
-
-        /* 微信公众号二维码 */
-        .wechat-qrcode {
-            display: flex;
-            gap: 20px;
-        }
-
-        .wechat-qrcode-item {
-            text-align: center;
-            width: 120px;
-        }
-
-        .wechat-qrcode-item img {
-            width: 120px;
-            height: 120px;
-            background: white;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-        /* 媒体平台图标 */
-        .social-platforms {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-platforms a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .social-platforms a:hover {
-            background: var(--gradient-bg);
-            transform: translateY(-3px);
+            color: var(--primary-color);
+            transform: translateX(5px);
         }
 
         .footer-bottom {
@@ -496,23 +546,66 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        /* 响应式设计 */
-        @media (max-width: 992px) {
-            .banner-content h2 {
-                font-size: 28px;
-            }
+        /* 微信二维码容器 */
+        .wechat-qrcode {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+            width: 240px;
+            justify-content: space-between;
+        }
+        
+        .wechat-qrcode-item {
+            text-align: center;
+            width: 112px;
+        }
+        
+        .wechat-qrcode-item img {
+            width: 112px;
+            height: 112px;
+            background: white;
+            padding: 4px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        }
+        
+        .wechat-qrcode-item p {
+            margin-top: 8px;
+            font-size: 11px;
+            color: #ccc;
+        }
+        
+        /* 媒体平台图标 */
+        .social-platforms {
+            display: flex;
+            justify-content: space-between;
+            width: 240px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+            gap: 4px;
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+        .social-platforms a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,.1);
+            border-radius: 50%;
+            transition: all .3s ease;
+            flex: 0 0 auto;
         }
 
-        /* 动画效果 */
+        .social-platforms a:hover {
+            background: var(--gradient-bg);
+            transform: translateY(-3px);
+        }
+
+        /* ************ 动画效果 ************ */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -525,7 +618,7 @@
         }
 
         .fade-in {
-            animation: fadeIn 1s ease forwards;
+            animation: fadeIn 0.8s ease forwards;
             opacity: 0;
         }
 
@@ -540,30 +633,84 @@
         .delay-3 {
             animation-delay: 0.6s;
         }
+
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-bg);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 动画 */
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .banner { height: 260px; }
+            .banner-content h2 { font-size: 1.4rem; }
+            .main-content { padding: 20px; }
+            .links-grid { grid-template-columns: 1fr; }
+            .qrcode-container { width: 60px; height: 60px; top: 10px; right: 10px; }
+            .link-description { margin-right: 70px; }
+            .footer-content { gap: 25px; }
+        }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHptMy41LTljLjgzIDAgMS41LS42NyAxLjUtMS41UzE2LjMzIDggMTUuNSA4IDE0IDguNjcgMTQgOC41IDE0LjUgOSAxNS41IDkgMTVzLjY3IDEuNSAxLjUgMS41eiIvPjwvc3ZnPg==" alt="Logo">
-                    <h1>潇</h1>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="https://zz123.com" target="_blank">听歌</a></li>
-                	<li><a href="https://www.qxd6.com" target="_blank">看剧</a></li>
-                	<li><a href="https://www.xiaoshuopu.com" target="_blank">看书</a></li>
-                	<li><a href="https://lnaoh.yhzu.cn" target="_blank">购物</a></li>
-                	<li><a href="https://hx.ihcking.com" target="_blank">博客</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Banner轮播 -->
+<!-- ========== 页头 (禾风格) ========== -->
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHptMy41LTljLjgzIDAgMS41LS42NyAxLjUtMS41UzE2LjMzIDggMTUuNSA4IDE0IDguNjcgMTQgOC41IDE0LjUgOSAxNS41IDkgMTVzLjY3IDEuNSAxLjUgMS41eiIvPjwvc3ZnPg==" alt="Logo">
+            <div class="logo-text">
+                <h1>逸</h1>
+                <div class="logo-subtitle">寒潇勿语 · 自在江湖</div>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-active"><i class="fas fa-home"></i> 首页</a></li>
+            <li><a href="https://zz123.com" target="_blank"><i class="fas fa-headphones"></i> 听歌</a></li>
+            <li><a href="https://www.qxd6.com" target="_blank"><i class="fas fa-tv"></i> 看剧</a></li>
+            <li><a href="https://www.xiaoshuopu.com" target="_blank"><i class="fas fa-book"></i> 看书</a></li>
+            <li><a href="https://lnaoh.yhzu.cn" target="_blank"><i class="fas fa-shopping-cart"></i> 购物</a></li>
+            <li><a href="https://hx.ihcking.com" target="_blank"><i class="fas fa-pen-nib"></i> 博客</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- ========== 主容器：banner 与主内容宽度完全一致 ========== -->
+<div class="container-nav">
+    <!-- Banner轮播 (现在在container内部，宽度自动匹配) -->
     <div class="banner" id="banner">
         <div class="banner-slides">
             <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
@@ -592,424 +739,296 @@
         </div>
     </div>
 
-    <!-- 主容器 -->
-    <div class="container-nav">
-        <!-- 主内容区 -->
-        <div class="main-content">
-            <!-- 时间显示 -->
-            <div class="time-display" id="current-time"></div>
-            
-            <!-- 搜索功能 -->
-            <div class="search-section">
-                <div class="search-options">
-                    <button class="search-option-btn active" data-option="local">本地搜索</button>
-                    <button class="search-option-btn" data-option="global">全网搜索</button>
-                </div>
-                <div class="search-box">
-                    <input type="text" class="search-input" placeholder="搜索网站或内容...">
-                    <button class="search-button">搜索</button>
-                </div>
-                
-                <!-- 快捷搜索标签 -->
-                <div class="quick-search-tags">
-                    <div class="quick-tag" data-category="all">百度</div>
-                    <div class="quick-tag" data-category="entertainment">知乎</div>
-                    <div class="quick-tag" data-category="tech">GitHub</div>
-                    <div class="quick-tag" data-category="entertainment">哔哩哔哩</div>
-                    <div class="quick-tag" data-category="entertainment">腾讯视频</div>
-                    <div class="quick-tag" data-category="entertainment">网易云音乐</div>
-                    <div class="quick-tag" data-category="shopping">淘宝</div>
-                    <div class="quick-tag" data-category="shopping">京东</div>
-                </div>
-                
-                <!-- 分类选项 -->
-                <div class="categories">
-                    <button class="category-btn active" data-category="all">全部</button>
+    <!-- 主内容区 -->
+    <div class="main-content fade-in">
+        <div class="time-display" id="current-time"></div>
+
+        <div class="search-section">
+            <div class="search-options">
+                <button class="search-option-btn active" data-option="local"><i class="fas fa-search"></i> 本地搜索</button>
+                <button class="search-option-btn" data-option="global"><i class="fas fa-globe"></i> 全网搜索</button>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search-input" id="searchInput" placeholder="搜索网站名称或描述...">
+                <button class="search-button" id="searchBtn">搜索</button>
+            </div>
+            <div class="quick-search-tags">
+                <div class="quick-tag">百度</div><div class="quick-tag">知乎</div><div class="quick-tag">GitHub</div>
+                <div class="quick-tag">哔哩哔哩</div><div class="quick-tag">腾讯视频</div><div class="quick-tag">网易云音乐</div>
+                <div class="quick-tag">淘宝</div><div class="quick-tag">京东</div>
+            </div>
+            <div class="categories">
+                <button class="category-btn active" data-category="all">全部</button>
                 <button class="category-btn" data-category="hc">皇宸</button>
                 <button class="category-btn" data-category="rm">热门</button>
                 <button class="category-btn" data-category="tj">推荐</button>
                 <button class="category-btn" data-category="cy">常用</button>
                 <button class="category-btn" data-category="ys">演示</button>
                 <button class="category-btn" data-category="gj">资源</button>
-                </div>
             </div>
-            
-            <!-- 网站卡片 -->
-            <div class="links-grid" id="links-grid">
-                
-                <div class="link-card" data-name="皇宸" data-url="https://hc.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://hc.ihcking.com/" alt="皇宸 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://hc.ihcking.com/" target="_blank" class="link-title">皇宸</a>
-                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
-                    </div>
-                </div>
-                
-                <div class="link-card" data-name="皇宸部落" data-url="https://hcbl.ihcking.com/" data-description="中文互联网高质量的问答社区和创作者聚集的原创内容平台。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://hcbl.ihcking.com/" alt="皇宸部落 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://hcbl.ihcking.com/" target="_blank" class="link-title">皇宸部落</a>
-                        <div class="link-description">中文互联网高质量的问答社区和创作者聚集的原创内容平台。</div>
-                    </div>
-                </div>
-                
-                <div class="link-card" data-name="乾龙公会" data-url="https://qlgh.ihcking.com/" data-description="全球最大的代码托管平台，开发者可以在这里协作开发项目。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qlgh.ihcking.com/" alt="乾龙公会 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://qlgh.ihcking.com/" target="_blank" class="link-title">乾龙公会</a>
-                        <div class="link-description">全球最大的代码托管平台，开发者可以在这里协作开发项目。</div>
-                    </div>
-                </div>
-                
-                <div class="link-card" data-name="卿城家族" data-url="https://qcjz.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qcjz.ihcking.com/" alt="卿城家族 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://qcjz.ihcking.com/" target="_blank" class="link-title">卿城家族</a>
-                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
-                    </div>
-                </div>
-                
-                <div class="link-card" data-name="枫谷师门" data-url="https://fgsm.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://fgsm.ihcking.com/" alt="枫谷师门 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://fgsm.ihcking.com/" target="_blank" class="link-title">枫谷师门</a>
-                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
-                    </div>
-                </div>
-                <div class="link-card" data-name="潇府" data-url="https://xf.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://xf.ihcking.com/" alt="潇府 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://xf.ihcking.com/" target="_blank" class="link-title">潇府</a>
-                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
-                    </div>
-                </div>
-                <div class="link-card" data-name="逸阁" data-url="https://yg.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://yg.ihcking.com/" alt="逸阁 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://yg.ihcking.com/" target="_blank" class="link-title">逸阁</a>
-                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
-                    </div>
-                </div>
-                <div class="link-card" data-name="卿阁" data-url="https://qg.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qg.ihcking.com/" alt="卿阁 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://qg.ihcking.com/" target="_blank" class="link-title">卿阁</a>
-                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
-                    </div>
-                </div>
-                <div class="link-card" data-name="枫阁" data-url="https://fg.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://fg.ihcking.com/" alt="枫阁 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://fg.ihcking.com/" target="_blank" class="link-title">枫阁</a>
-                        <div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div>
-                    </div>
-                </div>
-                <div class="link-card" data-name="御音阁" data-url="https://yyg.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
-                    <div class="qrcode-container">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://yyg.ihcking.com/" alt="御音阁 QR Code">
-                    </div>
-                    <div class="link-card-content">
-                        <a href="https://yyg.ihcking.com/" target="_blank" class="link-title">御音阁</a>
-                        <div class="link-description">专注于Pia戏配音的有声社团，欢迎加入我们。</div>
-                    </div>
-                </div>
-				
+        </div>
+
+        <div class="links-grid" id="linksGrid">
+            <!-- 卡片内容，二维码方形带边框 -->
+            <div class="link-card" data-name="皇宸" data-url="https://hc.ihcking.com/" data-description="全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://hc.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">皇宸</span><div class="link-description">全球最大的中文搜索引擎，提供网页、图片、视频等多种搜索服务。</div></div>
+            </div>
+            <div class="link-card" data-name="皇宸部落" data-url="https://hcbl.ihcking.com/" data-description="中文互联网高质量的问答社区和创作者聚集的原创内容平台。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://hcbl.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">皇宸部落</span><div class="link-description">中文互联网高质量的问答社区和创作者聚集的原创内容平台。</div></div>
+            </div>
+            <div class="link-card" data-name="乾龙公会" data-url="https://qlgh.ihcking.com/" data-description="全球最大的代码托管平台，开发者可以在这里协作开发项目。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qlgh.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">乾龙公会</span><div class="link-description">全球最大的代码托管平台，开发者可以在这里协作开发项目。</div></div>
+            </div>
+            <div class="link-card" data-name="卿城家族" data-url="https://qcjz.ihcking.com/" data-description="综合社交与兴趣社区，家族成员聚集地。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qcjz.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">卿城家族</span><div class="link-description">综合社交与兴趣社区，家族成员聚集地。</div></div>
+            </div>
+            <div class="link-card" data-name="枫谷师门" data-url="https://fgsm.ihcking.com/" data-description="师门传承，游戏攻略与社交平台。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://fgsm.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">枫谷师门</span><div class="link-description">师门传承，游戏攻略与社交平台。</div></div>
+            </div>
+            <div class="link-card" data-name="潇府" data-url="https://xf.ihcking.com/" data-description="潇府家园，文学与艺术交流社区。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://xf.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">潇府</span><div class="link-description">潇府家园，文学与艺术交流社区。</div></div>
+            </div>
+            <div class="link-card" data-name="逸阁" data-url="https://yg.ihcking.com/" data-description="逸阁 · 闲情逸致，诗意生活。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://yg.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">逸阁</span><div class="link-description">逸阁 · 闲情逸致，诗意生活。</div></div>
+            </div>
+            <div class="link-card" data-name="卿阁" data-url="https://qg.ihcking.com/" data-description="优雅社区，分享美好事物。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://qg.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">卿阁</span><div class="link-description">优雅社区，分享美好事物。</div></div>
+            </div>
+            <div class="link-card" data-name="枫阁" data-url="https://fg.ihcking.com/" data-description="枫叶主题创意社区。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://fg.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">枫阁</span><div class="link-description">枫叶主题创意社区。</div></div>
+            </div>
+            <div class="link-card" data-name="御音阁" data-url="https://yyg.ihcking.com/" data-description="专注于Pia戏配音的有声社团，欢迎加入我们。" data-category="hc">
+                <div class="qrcode-container"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://yyg.ihcking.com/" alt="QR"></div>
+                <div class="link-card-content"><span class="link-title">御音阁</span><div class="link-description">专注于Pia戏配音的有声社团，欢迎加入我们。</div></div>
             </div>
         </div>
     </div>
+</div>
 
-<!-- 页脚 -->
-<footer id="contact">
+<!-- ========== 页脚 (完全按照禾站样式) ========== -->
+<footer>
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
-                <h3>潇</h3>
+                <h3>逸 · 寒潇</h3>
                 <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="https://zz123.com" target="_blank">听歌</a></li>
-                	<li><a href="https://www.qxd6.com" target="_blank">看剧</a></li>
-                	<li><a href="https://www.xiaoshuopu.com" target="_blank">看书</a></li>
-                	<li><a href="https://lnaoh.yhzu.cn" target="_blank">购物</a></li>
-                	<li><a href="https://hx.ihcking.com" target="_blank">博客</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="https://zz123.com" target="_blank"><i class="fas fa-headphones"></i> 在线听歌</a></li>
+                    <li><a href="https://www.qxd6.com" target="_blank"><i class="fas fa-film"></i> 热剧推荐</a></li>
+                    <li><a href="https://www.xiaoshuopu.com" target="_blank"><i class="fas fa-book-open"></i> 书海漫游</a></li>
+                    <li><a href="https://hx.ihcking.com" target="_blank"><i class="fas fa-feather-alt"></i> 个人博客</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>友链</h3>
+                <h3>皇宸矩阵</h3>
                 <ul>
-                    <li><a href="https://hc.ihcking.com">皇宸总部</a></li>
-                    <li><a href="https://hcbl.ihcking.com">皇宸部落</a></li>
+                    <li><a href="https://hc.ihcking.com" target="_blank"><i class="fas fa-crown"></i> 皇宸总部</a></li>
+                    <li><a href="https://hcbl.ihcking.com" target="_blank"><i class="fas fa-users"></i> 皇宸部落</a></li>
+                    <li><a href="https://qlgh.ihcking.com" target="_blank"><i class="fas fa-dragon"></i> 乾龙公会</a></li>
+                    <li><a href="https://qcjz.ihcking.com" target="_blank"><i class="fas fa-city"></i> 卿城家族</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>联系我们</h3>
+                <h3>友情链接</h3>
                 <ul>
+                    <li><a href="https://www.yysls.cn" target="_blank"><i class="fas fa-gamepad"></i> 燕云十六声</a></li>
+                    <li><a href="https://fg.ihcking.com" target="_blank"><i class="fas fa-leaf"></i> 枫阁</a></li>
+                    <li><a href="https://yyg.ihcking.com" target="_blank"><i class="fas fa-microphone-alt"></i> 御音阁</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul>
                         <li><a href="#"><i class="fab fa-qq"></i> 3010662388</a></li>
 						<li><a href="#"><i class="fab fa-weixin"></i> 3010662388</a></li>
-                        <li><a href="#">📧 hc@ihcking.com</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
+                        <li><a href="#"><i class="far fa-envelope"></i> hc@ihcking.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
                 <h3>关注我们</h3>
                 <div class="wechat-qrcode">
                     <div class="wechat-qrcode-item">
-                        <img src="./assets/img/xfdyh.jpg" alt="微信公众号1">
-                        <p>潇府订阅号</p>
+                        <img src="./assets/img/hcwxdyh.jpg" alt="微信公众号1">
+                        <p>皇宸订阅号</p>
                     </div>
                     <div class="wechat-qrcode-item">
-                        <img src="./assets/img/hcwfh.jpg" alt="微信公众号2">
+                        <img src="./assets/img/hcwxfwh.jpg" alt="微信公众号2">
                         <p>皇宸服务号</p>
                     </div>
                 </div>
                 <div class="social-platforms">
-                    <a href="#" title="哔哩哔哩"><i class="fab fa-bilibili"></i>
-                    </a>
-                    <a href="#" title="微博"><i class="fab fa-weibo"></i>
-                    </a>
-                    <a href="#" title="抖音"><i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="#" title="QQ群"><i class="fab fa-qq"></i>
-                    </a>
+                        <a href="#" title="哔哩哔哩"><i class="fab fa-bilibili"></i></a>
+                        <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#" title="抖音"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="QQ群"><i class="fab fa-qq"></i></a>
+						<a href="#" title="微信群"><i class="fas fa-comments"></i></a>
+                        <a href="https://kook.vip/h2QyLc" title="KOOK社区"><i class="fas fa-users"></i></a>
+                </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 寒潇 . 保留所有权利.</p>
+            <p>&copy; 2025 逸 · 寒潇勿语 | 江湖如梦，自在随心。 保留所有权利。</p>
         </div>
     </div>
 </footer>
 
-    <script>
-        // 动态时间显示
+<div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
+
+<script>
+    (function() {
+        // 时间显示
         function updateTime() {
             const now = new Date();
             const year = now.getFullYear();
             const month = String(now.getMonth() + 1).padStart(2, '0');
             const day = String(now.getDate()).padStart(2, '0');
+            const weekdays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-            const weekdays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-            const weekday = weekdays[now.getDay()];
-            
-            document.getElementById('current-time').textContent = 
-                `${year}年${month}月${day}日 ${weekday} ${hours}:${minutes}:${seconds}`;
+            const timeStr = `${year}年${month}月${day}日 ${weekdays[now.getDay()]} ${hours}:${minutes}:${seconds}`;
+            const timeEl = document.getElementById('current-time');
+            if(timeEl) timeEl.innerText = timeStr;
         }
-        
         setInterval(updateTime, 1000);
         updateTime();
-        
-        // Banner轮播功能
+
+        // Banner轮播
         let currentSlide = 0;
         const slides = document.querySelectorAll('.banner-slide');
         const dots = document.querySelectorAll('.banner-dot');
         const slidesContainer = document.querySelector('.banner-slides');
-        const bannerElement = document.getElementById('banner');
-        
-        function showSlide(index) {
-            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
-            currentSlide = index;
+        if(slides.length && slidesContainer) {
+            function showSlide(index) {
+                slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach(d => d.classList.remove('active'));
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            function nextSlide() { showSlide((currentSlide + 1) % slides.length); }
+            dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+            setInterval(nextSlide, 5000);
+            if(slides[0]) slides[0].addEventListener('click', () => window.open('https://hcbl.ihcking.com/', '_blank'));
+            if(slides[1]) slides[1].addEventListener('click', () => window.open('https://qg.ihcking.com/', '_blank'));
+            if(slides[2]) slides[2].addEventListener('click', () => window.open('https://yyg.ihcking.com/', '_blank'));
         }
-        
-        function nextSlide() {
-            let next = currentSlide + 1;
-            if (next >= slides.length) next = 0;
-            showSlide(next);
-        }
-        
-        // 点击小圆点切换幻灯片
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => showSlide(index));
-        });
-        
-        // 自动轮播
-        setInterval(nextSlide, 5000);
-        
-        // Banner图片点击跳转功能
-        slides[0].addEventListener('click', () => {
-            window.open('https://hcbl.ihcking.com/', '_blank');
-        });
-        
-        slides[1].addEventListener('click', () => {
-            window.open('https://qg.ihcking.com/', '_blank');
-        });
-        
-        slides[2].addEventListener('click', () => {
-            window.open('https://yyg.ihcking.com/', '_blank');
-        });
-        
-        // 搜索
-        const searchButton = document.querySelector('.search-button');
-        const searchInput = document.querySelector('.search-input');
-        const searchOptionButtons = document.querySelectorAll('.search-option-btn');
+
+        // 搜索、分类、卡片功能
         const linkCards = document.querySelectorAll('.link-card');
-        let currentSearchOption = 'local'; // 默认为本地搜索
-        
-        // 切换搜索选项
-        searchOptionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                searchOptionButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                currentSearchOption = button.dataset.option;
-                
-                // 如果切换到本地搜索，显示所有网站卡片
-                if (currentSearchOption === 'local') {
-                    linkCards.forEach(card => {
-                        card.style.display = 'block';
-                    });
-                }
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        let searchOption = 'local';
+        const optionBtns = document.querySelectorAll('.search-option-btn');
+        optionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                optionBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                searchOption = btn.dataset.option;
+                if(searchOption === 'local' && searchInput.value.trim() === '') filterCardsByText('');
             });
         });
-        
-        // 执行本地搜索
-        function performLocalSearch(term) {
-            if (term.trim() === '') {
-                // 如果搜索词为空，显示所有网站卡片
-                linkCards.forEach(card => {
-                    card.style.display = 'block';
-                });
-                return;
-            }
-            
+
+        function filterCardsByText(term) {
+            term = term.trim().toLowerCase();
             linkCards.forEach(card => {
-                const name = card.dataset.name.toLowerCase();
-                const url = card.dataset.url.toLowerCase();
-                const description = card.dataset.description.toLowerCase();
-                const searchTerm = term.toLowerCase();
-                
-                if (name.includes(searchTerm) || url.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = 'block';
+                const name = (card.dataset.name || '').toLowerCase();
+                const url = (card.dataset.url || '').toLowerCase();
+                const desc = (card.dataset.description || '').toLowerCase();
+                if(term === '' || name.includes(term) || url.includes(term) || desc.includes(term)) {
+                    card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
                 }
             });
         }
-        
-        // 搜索框功能按钮点击事件
-        searchButton.addEventListener('click', () => {
-            const searchTerm = searchInput.value.trim();
-            if (searchTerm) {
-                if (currentSearchOption === 'local') {
-                    performLocalSearch(searchTerm);
-                } else {
-                    window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(searchTerm)}`);
-                }
+
+        function performLocalSearch() { filterCardsByText(searchInput.value); }
+        searchBtn.addEventListener('click', () => {
+            const keyword = searchInput.value.trim();
+            if(searchOption === 'global' && keyword) {
+                window.open(`https://www.baidu.com/s?wd=${encodeURIComponent(keyword)}`);
             } else {
-                // 如果搜索词为空，显示所有网站卡片
-                linkCards.forEach(card => {
-                    card.style.display = 'block';
-                });
+                performLocalSearch();
             }
         });
-        
-        // 回车键触发搜索
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                searchButton.click();
-            }
-        });
-        
-        // 分类切换功能
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // 移除所有分类按钮的active类
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                // 为当前点击的按钮添加active类
-                button.classList.add('active');
-                
-                const selectedCategory = button.dataset.category;
-                
-                // 显示或隐藏网站卡片
-                linkCards.forEach(card => {
-                    if (selectedCategory === 'all' || card.dataset.category === selectedCategory) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // 快捷标签交互
-        const quickTags = document.querySelectorAll('.quick-tag');
-        
-        quickTags.forEach(tag => {
+        searchInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') searchBtn.click(); });
+
+        document.querySelectorAll('.quick-tag').forEach(tag => {
             tag.addEventListener('click', () => {
-                const tagText = tag.textContent;
-                searchInput.value = tagText;
-                searchButton.click();
+                searchInput.value = tag.innerText;
+                searchBtn.click();
             });
         });
 
-        // 滚动动画
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                }
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.dataset.category;
+                linkCards.forEach(card => {
+                    if(category === 'all' || card.dataset.category === category) card.style.display = 'flex';
+                    else card.style.display = 'none';
+                });
             });
-        }, {
-            threshold: 0.1
         });
 
-        fadeElements.forEach(element => {
-            observer.observe(element);
+        linkCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                if(e.target.closest('.qrcode-container')) return;
+                const url = card.dataset.url;
+                if(url) window.open(url, '_blank');
+            });
         });
+
+        // 移动端汉堡菜单
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        function closeMobileMenu() {
+            if(hamburger && navLinks) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        if(hamburger && navLinks) {
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            });
+            document.addEventListener('click', (e) => {
+                if(window.innerWidth <= 992 && navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) closeMobileMenu();
+            });
+            window.addEventListener('resize', () => { if(window.innerWidth > 992) closeMobileMenu(); });
+        }
+
+        // 返回顶部
+        const backBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 300) backBtn.classList.add('show');
+            else backBtn.classList.remove('show');
+        });
+        backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         // 导航栏滚动效果
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
-            } else {
-                header.style.backgroundColor = 'rgba(26, 26, 46, 0.9)';
-                header.style.boxShadow = '0 2px 20px rgba(255, 255, 255, 0.1)';
-            }
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 50) header.style.backgroundColor = 'rgba(26, 26, 46, 0.98)';
+            else header.style.backgroundColor = 'rgba(26, 26, 46, 0.98)';
         });
-
-        // 修复卡片点击跳转功能
-        document.querySelectorAll('.link-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                // 如果点击的是二维码区域，则不跳转
-                if (e.target.closest('.qrcode-container')) {
-                    return;
-                }
-                
-                // 如果点击的是标题链接，则让浏览器处理链接跳转
-                if (e.target.tagName === 'A') {
-                    return;
-                }
-                
-                // 获取卡片的URL并跳转
-                const url = this.dataset.url;
-                if (url) {
-                    window.open(url, '_blank');
-                }
-            });
-        });
-    </script>
+    })();
+</script>
 </body>
 </html>
